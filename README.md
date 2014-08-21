@@ -434,20 +434,29 @@ tiles.forEach(t->{
 
 Back to [Index][I0]
 ***
-## STEP 14 
-In Game2048, add listener to scene on Key Pressed, get keyCode, check is arrowkey, get 
-Direction and move tile  
+## STEP 14. Listening to arrow keys 
+Add a listener to the scene for keys pressed, then get the key code, check if it is an arrow key. 
+In such case get the direction for that arrow and move tile
+
 ### SOLUTION CODE 
-valueFor(){
+* *Class*: `Game2048`
+* *Method*: `start`
+* [preview][14]
+* Copy and paste the following code snippet:
+```java
 scene.setOnKeyPressed(ke -> {
-KeyCode keyCode = ke.getCode();
-if(keyCode.isArrowKey()){
-Direction dir = Direction.valueFor(keyCode);
-gameManager.move(dir);
-}
+    KeyCode keyCode = ke.getCode();
+    if(keyCode.isArrowKey()){
+        Direction dir = Direction.valueFor(keyCode);
+        gameManager.move(dir);
+    }
 });
-}
-Screenshot after #14 and Right arrow pressed.  
+```
+
+### Screenshot after #14 
+Run the project to see the application after completing the first 14 steps. 
+Press the right arrow and check the tile from [Screenshot #10][screen10] moves one cell to the right
+![Game2048 after 14 steps][screen14]
 
 Back to [Index][I0]
 ***
