@@ -62,6 +62,7 @@ Now follow these steps
 ##### 21. [Find a random available location][I21]
 ##### 22. [Adding and animating new tiles][I22]
 ##### 23. [Playing with new cells on the board][I23]
+##### 24. [Introducing the GridOperator][I23]
 
 ***
 
@@ -760,8 +761,8 @@ in the grid, and after each movement a new tile appears
 Back to [Index][I0]
 ***
 ## STEP 24. Introducing the GridOperator 
-USing the two lists `traversalX` and `traversalY`, apply an integer binary opertator to every cell on the grid, 
-returning an int with the sum of the results of this functional. 
+Using the lists `traversalX` and `traversalY`, apply an integer binary opertator to every cell on the grid, 
+storing the sum of the results of this functional. 
 
 ### SOLUTION CODE 
 * *Class*: `GridOperator`
@@ -1274,3 +1275,4 @@ Back to [Index][I0]
 [I21]: https://github.com/jperedadnr/Game2048HOL#step-21-find-a-random-available-location
 [I22]: https://github.com/jperedadnr/Game2048HOL#step-22-adding-and-animating-new-tiles
 [I23]: https://github.com/jperedadnr/Game2048HOL#step-23-playing-with-new-cells-on-the-board
+[I24]: https://github.com/jperedadnr/Game2048HOL#step-24-introducing-the-gridoperator
