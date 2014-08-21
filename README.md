@@ -57,6 +57,7 @@ Now follow these steps
 ##### 16. [Random tiles, random locations][I16]
 ##### 17. [How far can a tile go?][I17]
 ##### 18. [A new approach to move the tiles][I18]
+##### 19. [Animating tile movement][I19]
 
 ***
 
@@ -1189,3 +1190,4 @@ Back to [Index][I0]
 [I16]: https://github.com/jperedadnr/Game2048HOL#step-16-random-tiles-random-locations
 [I17]: https://github.com/jperedadnr/Game2048HOL#step-17-how-far-can-a-tile-go
 [I18]: https://github.com/jperedadnr/Game2048HOL#step-18-a-new-approach-to-move-the-tiles
+[I19]: https://github.com/jperedadnr/Game2048HOL#step-19-animating-tile-movement
