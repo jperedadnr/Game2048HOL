@@ -206,7 +206,7 @@ setText(Integer.toString(value));
 Back to [Index][I0]
 ***
 ## STEP 7. Create a random Tile 
-Create a new `Tile` instance, which value being *2* with a 90% possibility or *4* with the 10% remaining
+Create a new `Tile` instance, which value being **2** with a 90% possibility or **4** with the 10% remaining
 
 ### SOLUTION CODE 
 * *Class*: `Tile`
@@ -218,21 +218,34 @@ return newTile(new Random().nextDouble() < 0.9 ? 2 : 4);
 ```
 Back to [Index][I0]
 ***
-## STEP 8 
-In Board.moveTile method, set tile layout x,y by location.layout x,y – tile minW,h/2. From 
-addTile, call moveTile. 
-### SOLUTION CODE 
-addTile(tile){
-moveTile(tile, tile.getLocation());
-}
-moveTile(tile){
+## STEP 8. Layout the tile at its location
+Set the tile layout by getting from its location the position at the center of the cell and 
+substracting half of the tile dimensions
+
+#### SOLUTION CODE 
+* *Class*: `Board`
+* *Method*: `moveTile`
+* [preview][8.1]
+* Copy and paste the following code snippet:
+```java
 double layoutX = tile.getLocation().getLayoutX(CELL_SIZE) - (tile.getMinWidth() /
 2);
 double layoutY = tile.getLocation().getLayoutY(CELL_SIZE) - (tile.getMinHeight()
 / 2);
 tile.setLayoutX(layoutX);
 tile.setLayoutY(layoutY);
-}
+```
+
+Add a call to `moveTile` when a tile is added
+
+#### SOLUTION CODE 
+* *Class*: `Board`
+* *Method*: `addTile`
+* [preview][8.2]
+* Copy and paste the following code snippet:
+```java
+moveTile(tile, tile.getLocation());
+```
 Back to [Index][I0]
 ***
 ## STEP 9 
@@ -985,6 +998,8 @@ Back to [Index][I0]
 [5.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L66
 [6]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Tile.java#L32-46
 [7]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Tile.java#L20
+[8.1]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L234-238
+[8.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#226
 
 [screen5]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step5.jpg
 
