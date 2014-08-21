@@ -498,9 +498,15 @@ gameGrid.clear()
 Back to [Index][I0]
 ***
 ## STEP 16 
-Modify GameManager.startGame to get a random location for the tile shuffling a copy of 
-locations, then pick two random tiles and add them to the board at random locations. ### SOLUTION CODE 
-startGame (){
+Shuffle a copy of `locations` list, and add two random tiles at the first two locations of the shuffled 
+list to `gameGrid` and call `redrawTilesInGameGrid`
+
+#### SOLUTION CODE 
+* *Class*: `GameManager`
+* *Method*: `startGame`
+* [preview][16.1]
+* Copy and paste the following code snippet:
+```java
 List<Location> locCopy=locations.stream().collect(Collectors.toList());
 Collections.shuffle(locCopy);
 tile0.setLocation(locCopy.get(0));
@@ -508,11 +514,20 @@ gameGrid.put(tile0.getLocation(), tile0);
 Tile tile1 = Tile.newRandomTile();
 tile1.setLocation(locCopy.get(1));
 gameGrid.put(tile1.getLocation(), tile1);
+
 redrawTilesInGameGrid();
-}
-redrawTilesInGameGrid(){
+```
+
+Add to the board all valid tiles in gameGrid
+
+#### SOLUTION CODE 
+* *Class*: `GameManager`
+* *Method*: `redrawTilesInGameGrid`
+* [preview][16.2]
+* Copy and paste the following code snippet:
+```java
 gameGrid.values().stream().filter(Objects::nonNull).forEach(board::addTile);
-}
+```
 
 Back to [Index][I0]
 ***
@@ -1116,6 +1131,8 @@ Back to [Index][I0]
 [14]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Game2048.java#L45-51
 [15.1]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L79-89
 [15.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L65
+[16.1]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L113-121
+[16.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L132
 
 [screen5]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step5.jpg
 [screen9]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step9.jpg
