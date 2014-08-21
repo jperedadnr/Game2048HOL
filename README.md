@@ -36,7 +36,7 @@ https://github.com/jperedadnr/Game2048Empty.git
  * Wait till the local copy is created, and the project is opened in NetBeans
  * Select Build and Run to test the (empty) application
 
-## STEP 1. Add `GameManager` object into `Game2048` class
+## STEP 1. Add GameManager object into Game2048 class
 Create an instance of `GameManager` in `Game2048` class and add it to the `root` object (StackPane).
 
 ### SOLUTION CODE
@@ -44,6 +44,7 @@ Copy and paste the following code snippet.
 
 * *Class*: `Game2048`
 * *Method*: `start()`
+* [preview](https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Game2048.java#L33)
 * code snippet:
 ```java
 gameManager = new GameManager();
