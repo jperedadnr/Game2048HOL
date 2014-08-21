@@ -402,27 +402,34 @@ return new Location(x + direction.getX(), y + direction.getY());
 Back to [Index][I0]
 ***
 ## STEP 13 
-In GameManager.move, get a list List<Tile> of tiles in the gridGroup, remove all the list from 
-the gridGroup, and create new tiles based in the old ones, with offset(dir) in their location, add 
-them to gridGroup. Check  if newLoc isValidFor and if in new location there is no another tile, 
-else keep tile location. 
+- Get a list of tiles in the `gridGroup` and then remove all the list from 
+the `gridGroup`
+- Create new tiles based in the old ones, applying an offset in the specified direction
+to their current location, checking if the new location is valid and it doesn't contain another tile. 
+Otherwise keep the previous location. Then add them to the `gridGroup`
+ 
 ### SOLUTION CODE 
-move(direction){
+* *Class*: `GameManager`
+* *Method*: `move`
+* [preview][13]
+* Copy and paste the following code snippet:
+```java
 List<Tile> tiles=board.getGridGroup().getChildren().stream()
-.filter(g->g instanceof Tile).map(t->(Tile)t)
-.collect(Collectors.toList());board.getGridGroup().getChildren().removeAll(tiles);
+        .filter(g->g instanceof Tile).map(t->(Tile)t)
+        .collect(Collectors.toList());
+board.getGridGroup().getChildren().removeAll(tiles);
 tiles.forEach(t->{
-Tile newTile = Tile.newTile(t.getValue());
-final Location newLoc=t.getLocation().offset(dir);
-if(newLoc.isValidFor() && !tiles.stream().filter(t2-
->t2.getLocation().equals(newLoc)).findAny().isPresent()){
-newTile.setLocation(newLoc);
-} else {
-newTile.setLocation(t.getLocation());
-}
-board.addTile(newTile);
+    Tile newTile = Tile.newTile(t.getValue());
+    final Location newLoc=t.getLocation().offset(direction);
+    if(newLoc.isValidFor() && 
+       !tiles.stream().filter(t2->t2.getLocation().equals(newLoc)).findAny().isPresent()){
+        newTile.setLocation(newLoc);
+    } else {
+        newTile.setLocation(t.getLocation());
+    }
+    board.addTile(newTile);
 });
-}
+```
 
 Back to [Index][I0]
 ***
