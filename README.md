@@ -50,6 +50,7 @@ Now follow these steps
 ##### 9. [Let's start the Game!][I9]
 ##### 10. [CSS styling][I10]
 ##### 11. [Connect arrow keys with Direction][I11]
+##### 12. [Moving one tile][I12]
 
 ***
 
@@ -1079,6 +1080,7 @@ Back to [Index][I0]
 [10.5]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L201-202
 [10.6]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Tile.java#L40
 [11]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Direction.java#L37
+[12]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Location.java#L64
 
 [screen5]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step5.jpg
 [screen9]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step9.jpg
@@ -1096,3 +1098,4 @@ Back to [Index][I0]
 [I9]: https://github.com/jperedadnr/Game2048HOL#step-9-lets-start-the-game
 [I10]: https://github.com/jperedadnr/Game2048HOL#step-10-css-styling
 [I11]: https://github.com/jperedadnr/Game2048HOL#step-11-connect-arrow-keys-with-direction
+[I12]: https://github.com/jperedadnr/Game2048HOL#step-12-moving-one-tile
