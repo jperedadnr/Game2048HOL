@@ -45,6 +45,7 @@ Now follow these steps
 #### 4. [Define rectangle corner border size][I4]
 #### 5. [Draw a grid of rectangles in the Board][I5]
 #### 6. [Add Tiles into the grid][I6]
+#### 7. [Create a random Tile][I7]
 
 ***
 
@@ -994,3 +995,4 @@ Back to [Index][I0]
 [I4]: https://github.com/jperedadnr/Game2048HOL#step-4-define-rectangle-corner-border-size
 [I5]: https://github.com/jperedadnr/Game2048HOL#step-5-draw-a-grid-of-rectangles-in-the-board
 [I6]: https://github.com/jperedadnr/Game2048HOL#step-6-add-tiles-into-the-grid
+[I7]: https://github.com/jperedadnr/Game2048HOL#step-7-create-a-random-tile
