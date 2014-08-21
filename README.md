@@ -59,6 +59,7 @@ Now follow these steps
 ##### 18. [A new approach to move the tiles][I18]
 ##### 19. [Animating one tile movement][I19]
 ##### 20. [Animating all the tiles together][I20]
+##### 21. [Find a random available location][I21]
 
 ***
 
@@ -1244,3 +1245,4 @@ Back to [Index][I0]
 [I18]: https://github.com/jperedadnr/Game2048HOL#step-18-a-new-approach-to-move-the-tiles
 [I19]: https://github.com/jperedadnr/Game2048HOL#step-19-animating-one-tile-movement
 [I20]: https://github.com/jperedadnr/Game2048HOL#step-20-animating-all-the-tiles-together
+[I21]: https://github.com/jperedadnr/Game2048HOL#step-21-find-a-random-available-location
