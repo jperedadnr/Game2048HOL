@@ -52,6 +52,7 @@ Now follow these steps
 ##### 11. [Connect arrow keys with Direction][I11]
 ##### 12. [Moving one tile][I12]
 ##### 13. [Moving tiles on the board][I13]
+##### 14. [Listening to arrow keys][I14]
 
 ***
 
@@ -1099,10 +1100,12 @@ Back to [Index][I0]
 [11]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Direction.java#L37
 [12]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Location.java#L64
 [13]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L157-170
+[14]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Game2048.java#L45-51
 
 [screen5]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step5.jpg
 [screen9]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step9.jpg
 [screen10]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step10.jpg
+[screen14]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step14.jpg
 
 [I0]: https://github.com/jperedadnr/Game2048HOL#index
 [I1]: https://github.com/jperedadnr/Game2048HOL#step-1-add-gamemanager-into-game2048
@@ -1118,3 +1121,4 @@ Back to [Index][I0]
 [I11]: https://github.com/jperedadnr/Game2048HOL#step-11-connect-arrow-keys-with-direction
 [I12]: https://github.com/jperedadnr/Game2048HOL#step-12-moving-one-tile
 [I13]: https://github.com/jperedadnr/Game2048HOL#step-13-moving-tiles-on-the-board
+[I14]: https://github.com/jperedadnr/Game2048HOL#step-14-listening-to-arrow-keys
