@@ -401,7 +401,7 @@ return new Location(x + direction.getX(), y + direction.getY());
 ```
 Back to [Index][I0]
 ***
-## STEP 13 
+## STEP 13. Moving tiles in the board 
 - Get a list of tiles in the `gridGroup` and then remove all the list from 
 the `gridGroup`
 - Create new tiles based in the old ones, applying an offset in the specified direction
@@ -1088,6 +1088,7 @@ Back to [Index][I0]
 [10.6]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Tile.java#L40
 [11]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Direction.java#L37
 [12]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Location.java#L64
+[13]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L157-170
 
 [screen5]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step5.jpg
 [screen9]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step9.jpg
@@ -1106,3 +1107,4 @@ Back to [Index][I0]
 [I10]: https://github.com/jperedadnr/Game2048HOL#step-10-css-styling
 [I11]: https://github.com/jperedadnr/Game2048HOL#step-11-connect-arrow-keys-with-direction
 [I12]: https://github.com/jperedadnr/Game2048HOL#step-12-moving-one-tile
+[I13]: https://github.com/jperedadnr/Game2048HOL#step-12-moving-one-tile
