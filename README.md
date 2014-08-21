@@ -704,24 +704,30 @@ location = availableLocations.get(0);
 
 Back to [Index][I0]
 ***
-## STEP 22 
-In GameManager. addAndAnimateRandomTile, Set the scale to 0 of the new tile, and create 
-scaleTransition to scale it to 1, in 125 ms, easy_out. 
+## STEP 22. Adding and animating new tiles
+Create a new tile at the specified location, with scale set to 0. Add it to the `board`, and to the `gameGrid`.
+Create a `ScaleTransition` to scale it to 1, in 125 ms, with an easy_out interpolation and play it
  
 ### SOLUTION CODE 
-addAndAnimateRandomTile (){
+* *Class*: `GameManager`
+* *Method*: `addAndAnimateRandomTile`
+* [preview][22]
+* Copy and paste the following code snippet:
+```java
 Tile tile = Tile.newRandomTile();
 tile.setLocation(randomLocation);
-tile.setScaleX(0);
+tile.setScaleX(0); 
 tile.setScaleY(0);
 board.addTile(tile);
-gameGrid.put(tile.getLocation(), tile);final ScaleTransition scaleTransition = new ScaleTransition(Duration.millis(125),
-tile);
+gameGrid.put(tile.getLocation(), tile);
+
+final ScaleTransition scaleTransition = new ScaleTransition(Duration.millis(125), tile);
 scaleTransition.setToX(1.0);
 scaleTransition.setToY(1.0);
 scaleTransition.setInterpolator(Interpolator.EASE_OUT);
+
 scaleTransition.play();
-}
+```
 
 Back to [Index][I0]
 ***
@@ -1217,6 +1223,7 @@ Back to [Index][I0]
 [20.3]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L296-299
 [20.4]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L338-342
 [21]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L399-407
+[22]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L420-443
 
 [screen5]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step5.jpg
 [screen9]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step9.jpg
