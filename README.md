@@ -249,17 +249,33 @@ moveTile(tile, tile.getLocation());
 ```
 Back to [Index][I0]
 ***
-## STEP 9 
-In GameManager.startGame, add random tile at random location 
-### SOLUTION CODE 
-GameManager (){
-startGame();
-}
-startGame(){
+## STEP 9. Let's start the Game! 
+Add a random tile a location of your choosing to the board
+
+#### SOLUTION CODE 
+* *Class*: `GameManager`
+* *Method*: `startGame`
+* [preview][9.1]
+* Copy and paste the following code snippet:
+```java
 Tile tile0 = Tile.newRandomTile();
 tile0.setLocation(new Location(1,2));
 board.addTile(tile0);
-}Screenshot after #9 
+```
+
+Add a call to `startGame` in the `GameManager` constructor 
+
+#### SOLUTION CODE 
+* *Class*: `GameManager`
+* *Method*: constructor
+* [preview][9.2]
+* Copy and paste the following code snippet:
+```java
+startGame();
+```
+### Screenshot after #9 
+Run the project to see the application after completing the first 9 steps
+![Game2048 after 9 steps][screen9]
  
 Back to [Index][I0]
 *** 
@@ -1000,9 +1016,12 @@ Back to [Index][I0]
 [6]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Tile.java#L32-46
 [7]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Tile.java#L20
 [8.1]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L234-238
-[8.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#226
+[8.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L226
+[9.1]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L107-111
+[9.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L69
 
 [screen5]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step5.jpg
+[screen9]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step9.jpg
 
 [I0]: https://github.com/jperedadnr/Game2048HOL#index
 [I1]: https://github.com/jperedadnr/Game2048HOL#step-1-add-gamemanager-into-game2048
