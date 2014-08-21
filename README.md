@@ -54,6 +54,7 @@ Now follow these steps
 ##### 13. [Moving tiles on the board][I13]
 ##### 14. [Listening to arrow keys][I14]
 ##### 15. [Initializing the game][I15]
+##### 16. [Random tiles, random locations][I16]
 
 ***
 
@@ -1155,3 +1156,4 @@ Back to [Index][I0]
 [I13]: https://github.com/jperedadnr/Game2048HOL#step-13-moving-tiles-on-the-board
 [I14]: https://github.com/jperedadnr/Game2048HOL#step-14-listening-to-arrow-keys
 [I15]: https://github.com/jperedadnr/Game2048HOL#step-15-initializing-the-game
+[I16]: https://github.com/jperedadnr/Game2048HOL#step-16-random-tiles-random-locations
