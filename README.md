@@ -40,12 +40,15 @@ https://github.com/jperedadnr/Game2048Empty.git
 Create an instance of GameManager in Game2048 class and add it to the root object (StackPane).
 
 ### SOLUTION CODE
-Add the following code into method start() of class Game2048
+Add an instance of `GameManager` to the application.
+*Class*: `Game2048`
+*Method*: `start()`
+
 ```java
 gameManager = new GameManager();
 root.getChildren().add(gameManager);
 ```
-
+***
 ## STEP 2. Add a Board into GameManager
 Create instance of Board in GameManager and add it to it
 
@@ -117,7 +120,7 @@ for(int i=0; i<4; i++){
 }
 ```
 
-Call method createGrid() from constructor of class Board 
+Call method **createGrid()** from constructor of class **Board** 
 ```java
 createGrid();
 ```
@@ -128,7 +131,8 @@ Label size cell_size‐13; align center, setText(value)
 Setstyle background color #c9c9c9;
  
 ### SOLUTION CODE
-Tile(value){
+```java
+private Tile(int value){
 final int squareSize = Board.CELL_SIZE - 13;
 setMinSize(squareSize, squareSize);
 setMaxSize(squareSize, squareSize);
@@ -138,16 +142,18 @@ setAlignment(Pos.CENTER);this.value = value;
 this.merged = false;
 setText(Integer.toString(value));
 }
-STEP 7 
+```
+
+## STEP 7 
 Assign 90% possibilities to random tiles 
-SOLUTION CODE 
+### SOLUTION CODE 
 newRandomTile{
 return newTile(new Random().nextDouble() < 0.9 ? 2 : 4);
 }
-STEP 8 
+## STEP 8 
 In Board.moveTile method, set tile layout x,y by location.layout x,y – tile minW,h/2. From 
 addTile, call moveTile. 
-SOLUTION CODE 
+### SOLUTION CODE 
 addTile(tile){
 moveTile(tile, tile.getLocation());
 }
@@ -159,9 +165,9 @@ double layoutY = tile.getLocation().getLayoutY(CELL_SIZE) - (tile.getMinHeight()
 tile.setLayoutX(layoutX);
 tile.setLayoutY(layoutY);
 }
-STEP 9 
+## STEP 9 
 In GameManager.startGame, add random tile at random location 
-SOLUTION CODE 
+### SOLUTION CODE 
 GameManager (){
 startGame();
 }
@@ -172,7 +178,7 @@ board.addTile(tile0);
 }Screenshot after #9 
  
  
-STEP 10 
+## STEP 10 
 In Game2048, load the custom font, enable css styling 
 Apply all the styles to: 
 *Game2048‐>root, game‐root 
@@ -187,7 +193,7 @@ Apply all the styles to:
 ‐lblBest, game‐label, game‐score 
 ‐Rectangle, game‐grid‐cell, Adjust arcsize in cell to Cell_size/6; 
 ‐GridGroup, game‐grid 
-‐hBottom, game‐backGrid SOLUTION CODE 
+‐hBottom, game‐backGrid ### SOLUTION CODE 
 init (){
 Font.loadFont(Game2048.class.getResource("ClearSans-Bold.ttf").toExternalForm(),
 10.0);
@@ -220,24 +226,24 @@ Tile(){
 getStyleClass().addAll("game-label", "game-tile-" + value);
 }
 Screenshot after #10  
-STEP 11 
+## STEP 11 
 In Direction, add valueFor static method, from KeyCode get valueOf as Direction 
-SOLUTION CODE 
+### SOLUTION CODE 
 valueFor(){
 return valueOf(keyCode.name());
 }
-STEP 12 
+## STEP 12 
 In Location, add offset method creating a new Location based on the actual and a direction 
-SOLUTION CODE 
+### SOLUTION CODE 
 offset(direction){
 return new Location(x + direction.getX(), y + direction.getY());
 }
-STEP 13 
+## STEP 13 
 In GameManager.move, get a list List<Tile> of tiles in the gridGroup, remove all the list from 
 the gridGroup, and create new tiles based in the old ones, with offset(dir) in their location, add 
 them to gridGroup. Check  if newLoc isValidFor and if in new location there is no another tile, 
 else keep tile location. 
-SOLUTION CODE 
+### SOLUTION CODE 
 move(direction){
 List<Tile> tiles=board.getGridGroup().getChildren().stream()
 .filter(g->g instanceof Tile).map(t->(Tile)t)
@@ -254,10 +260,10 @@ newTile.setLocation(t.getLocation());
 board.addTile(newTile);
 });
 }
-STEP 14 
+## STEP 14 
 In Game2048, add listener to scene on Key Pressed, get keyCode, check is arrowkey, get 
 Direction and move tile  
-SOLUTION CODE 
+### SOLUTION CODE 
 valueFor(){
 scene.setOnKeyPressed(ke -> {
 KeyCode keyCode = ke.getCode();
@@ -268,12 +274,12 @@ gameManager.move(dir);
 });
 }
 Screenshot after #14 and Right arrow pressed.  
-STEP 15 
+## STEP 15 
 In GameManager.initializeGameGrid, clear the list and add all valid locations, call it before 
 startGame. 
-SOLUTION CODE 
+### SOLUTION CODE 
 GameManager(){
-if(Game2048.STEP>=15){
+if(Game2048.## STEP>=15){
 initializeGameGrid();
 }
 }
@@ -288,9 +294,9 @@ gameGrid.put(location, null);
 }
 }
 }
-STEP 16 
+## STEP 16 
 Modify GameManager.startGame to get a random location for the tile shuffling a copy of 
-locations, then pick two random tiles and add them to the board at random locations. SOLUTION CODE 
+locations, then pick two random tiles and add them to the board at random locations. ### SOLUTION CODE 
 startGame (){
 List<Location> locCopy=locations.stream().collect(Collectors.toList());
 Collections.shuffle(locCopy);
@@ -304,20 +310,20 @@ redrawTilesInGameGrid();
 redrawTilesInGameGrid(){
 gameGrid.values().stream().filter(Objects::nonNull).forEach(board::addTile);
 }
-STEP 17 
+## STEP 17 
 In GameManager.findFarthestLocation, search for the farthest location in the direction of the 
 movement without any tiles and inside the grid. 
-SOLUTION CODE 
+### SOLUTION CODE 
 findFarthestLocation(){
 do {
 farthest = location;
 location = farthest.offset(direction);
 } while (location.isValidFor() && gameGrid.get(location)==null);
 }
-STEP 18 
+## STEP 18 
 In GameManager.move, replace board.gridGroup with gameGrid, using a double IntStream to 
 traverse the grid, moving the tiles to the farthest location possible (location & layout). 
-SOLUTION CODE 
+### SOLUTION CODE 
 move(){
 IntStream.range(0, 4).boxed().forEach(i->{
 IntStream.range(0, 4).boxed().forEach(j->{
@@ -333,10 +339,10 @@ t.setLocation(newLoc);
 });
 });
 }
-STEP 19 
+## STEP 19 
 In GameManager.animateExistingTile, animate the tile translation from its actual location to 
 the new one, in 65 ms. 
-SOLUTION CODE 
+### SOLUTION CODE 
 animateExistingTile(){
 KeyValue kvX = new KeyValue(tile.layoutXProperty(),
 newLocation.getLayoutX(Board.CELL_SIZE) - (tile.getMinHeight() / 2),
@@ -349,10 +355,10 @@ KeyFrame kfY = new KeyFrame(Duration.millis(65), kvY);
 timeline.getKeyFrames().add(kfX);
 timeline.getKeyFrames().add(kfY);
 }
-STEP 20 
+## STEP 20 
 In GameManager.move, use a parallelTransition to play the tiles animation. Use a volatile 
 variable to avoid input while moving. 
-SOLUTION CODE 
+### SOLUTION CODE 
 move(){
 synchronized (gameGrid) {
 if (movingTiles) {
@@ -372,10 +378,10 @@ movingTiles = true;
 parallelTransition.play();
 parallelTransition.getChildren().clear();
 }
-STEP 21 
+## STEP 21 
 In GameManager.findRandomAvailableLocation, from the remaining locations with no tile, 
 shuffle the collection to get a random position, if any. 
-SOLUTION CODE 
+### SOLUTION CODE 
 findFarthestLocation(){
 List<Location> availableLocations = locations.stream().filter(l ->
 gameGrid.get(l) == null)
@@ -386,11 +392,11 @@ return null;
 Collections.shuffle(availableLocations);
 location = availableLocations.get(0);
 }
-STEP 22 
+## STEP 22 
 In GameManager. addAndAnimateRandomTile, Set the scale to 0 of the new tile, and create 
 scaleTransition to scale it to 1, in 125 ms, easy_out. 
  
-SOLUTION CODE 
+### SOLUTION CODE 
 addAndAnimateRandomTile (){
 Tile tile = Tile.newRandomTile();
 tile.setLocation(randomLocation);
@@ -404,10 +410,10 @@ scaleTransition.setToY(1.0);
 scaleTransition.setInterpolator(Interpolator.EASE_OUT);
 scaleTransition.play();
 }
-STEP 23 
+## STEP 23 
 In GameManager.move, in parallel.OnFinished, get a randomLocation, check not null, create 
 random tile, add to board and to map. Else print Game Over 
-SOLUTION CODE 
+### SOLUTION CODE 
 move(){
 parallelTransition.setOnFinished(){
 Location randomAvailableLocation = findRandomAvailableLocation();
@@ -420,10 +426,10 @@ System.out.println("Game Over");
 }
 Screenshot after #23 
  
- STEP 24 
+ ## STEP 24 
 In GridOperator, traverseGrid method, apply the application of a functional to every cell of the 
 grid, returning an int with the sum of the results of this functional. 
-SOLUTION CODE 
+### SOLUTION CODE 
 traverseGrid(){
 traversalX.forEach(x -> {
 traversalY.forEach(y -> {
@@ -431,7 +437,7 @@ at.addAndGet(func.applyAsInt(x, y));
 });
 });
 }
-STEP 25 
+## STEP 25 
 In GameManager. initializeGameGrid method, replace the double for with the traverseGrid 
 method. 
 In GameManager.move method, replace the IntStreams with the traverseGrid method. Assign 
@@ -439,7 +445,7 @@ to  tilesWereMoved  to account for the tiles moved.
 In GameManager.move.setOnFinished, before adding a tile, check there were some 
 movements done. 
 In Board.createGrid, replace the double for with the traverseGrid 
-SOLUTION CODE 
+### SOLUTION CODE 
 initializeGameGrid(){
 GridOperator.traverseGrid((i, j) -> {
 Location location = new Location(i,j);
@@ -478,10 +484,10 @@ gridGroup.getChildren().add(createCell(i, j));
 return 0;
 });
 }
-STEP 26 
+## STEP 26 
 In GridOperator, sort the traverse X,Y list, so for Right or Down directions traverseX,Y are taken 
 in reverse order. In move, first of all call sortGrid before traverseGrid. 
-SOLUTION CODE 
+### SOLUTION CODE 
 sortGrid(){
 Collections.sort(traversalX, direction.equals(Direction.RIGHT) ?
 Collections.reverseOrder() : Integer::compareTo);
@@ -491,11 +497,11 @@ Collections.reverseOrder() : Integer::compareTo);
 move(){
 GridOperator.sortGrid(direction);
 }
-STEP 27 
+## STEP 27 
 In Tile. merge method, add to tile’s value the value of the tile to be merged to, set the text of 
 the label with the new value and replace the old style ‘game‐title‐“‐value with the new one. In 
 Tile.isMergeable Check it this.tile can be merged with anotherTile 
-SOLUTION CODE 
+### SOLUTION CODE 
 merge(){getStyleClass().remove("game-tile-" + value);
 this.value += another.getValue();
 setText(Integer.toString(value));
@@ -505,10 +511,10 @@ getStyleClass().add("game-tile-" + value);
 isMergeable(){
 return anotherTile != null && getValue()==anotherTile.getValue();
 }
-STEP 28 
+## STEP 28 
 In GameManager. animateMergedTile method, add a sequential animation, with two scale 
 animations, from 1 to 1.2, ease_in, and from 1.2 to 1 ease_out, in 80 ms each 
-SOLUTION CODE 
+### SOLUTION CODE 
 animateMergedTile(){
 final ScaleTransition scale0 = new ScaleTransition(Duration.millis(80), tile);
 scale0.setToX(1.2);
@@ -520,13 +526,13 @@ scale1.setToY(1.0);
 scale1.setInterpolator(Interpolator.EASE_OUT);
 return new SequentialTransition(scale0, scale1);
 }
-STEP 29 
+## STEP 29 
 In GameManager.move method, get tile for an offset, check if it's a valid tile, not merged, and 
 check if tiles can be merged. Then merge  this new tile with the old one, move to front the new 
 tile, put the nextLocation on the map, with the new tile and replace last location with null. Add 
 old tile to animateExistingTile, and new one to animateMerdedTile. Add old tile to 
 mergedToBeRemoved, and return 1. 
-SOLUTION CODE 
+### SOLUTION CODE 
 move(){
 Location nextLocation = newLoc.offset(direction);
 Tile tileToBeMerged = nextLocation.isValidFor() ? gameGrid.get(nextLocation) :
@@ -543,10 +549,10 @@ mergedToBeRemoved.add(t);
 return 1;
 }
 }
-STEP 30 
+## STEP 30 
 In GameManager.move, on finished method, remove the tiles in the set from the gridGroup 
 and clear the set. For all the tiles on the board: set to false their merged value. 
-SOLUTION CODE 
+### SOLUTION CODE 
 move(){
 setOnFinished(){
 board.getGridGroup().getChildren().removeAll(mergedToBeRemoved);
@@ -556,31 +562,31 @@ gameGrid.values().stream().filter(Objects::nonNull).forEach(t-
 }
 }
 Screenshot after #30 
- STEP 31 
+ ## STEP 31 
 In Board.createGrid, to avoid dropshadow effect of higher tiles move the grid, add a rectangle 
 to clip hBottom. 
-SOLUTION CODE 
+### SOLUTION CODE 
 createGrid(){
 Rectangle rect = new Rectangle(GRID_WIDTH, GRID_WIDTH);
 hBottom.setClip(rect);
 }
-STEP 32 
+## STEP 32 
 In Board.createScore, add style for lblPoints, add to board. Add a listener to text changes, so it 
 gets centered right below the center of vScore. 
-SOLUTION CODE 
+### SOLUTION CODE 
 createScore(){
 lblPoints.getStyleClass().addAll("game-label","game-points");
 lblPoints.setAlignment(Pos.CENTER);
 lblPoints.setMinWidth(100);
 getChildren().add(lblPoints);
 }
-STEP 33 
+## STEP 33 
 In Board.createScore, bind lblPoints  to gameMovePoints with a “+” prefix, if points>0, and 
 bind the lblScore text property with the gameScore property. 
 In Board.addPoints, add the points to gameMove and gameScore property. 
 In GameManager.move, reset the points before traverseGrid, and add the points for every 
 merged cell 
-SOLUTION CODE 
+### SOLUTION CODE 
 createScore(){
 lblPoints.textProperty().bind(Bindings.createStringBinding(()->
 (gameMovePoints.get()>0)?"+".concat(Integer.toString(gameMovePoints.get()
@@ -596,10 +602,10 @@ board.setPoints(0);
 }move(){
 board.addPoints(tileToBeMerged.getValue());
 }
-STEP 34 
+## STEP 34 
 In Board.createScore, add a listener to lblPoints text changes, so it gets centered right below 
 the center of vScore. 
-SOLUTION CODE 
+### SOLUTION CODE 
 createScore(){
 lblPoints.textProperty().addListener((ov,s,s1)->{
 lblPoints.setLayoutX(0);
@@ -608,12 +614,12 @@ lblPoints.setLayoutX(lblPoints.sceneToLocal(midScoreX, 0).getX()-
 lblPoints.getWidth()/2d);
 });
 }
-STEP 35 
+## STEP 35 
 In Board.createScore, create the timeline to translate the lblPoints in Y from 20 to 100 and 
 reduce its opacity from 1 to 0 in 600 ms. 
 In Board.animateScore, start the animation. 
 In GameManager.move call board.animateScore after traverseGrid. 
-SOLUTION CODE 
+### SOLUTION CODE 
 createScore(){
 final KeyValue kvO0 = new KeyValue(lblPoints.opacityProperty(), 1);
 final KeyValue kvY0 = new KeyValue(lblPoints.layoutYProperty(), 20);
@@ -633,10 +639,10 @@ board.animateScore();
 }
 Screenshot after #35 
  
-STEP 36 
+## STEP 36 
 In GameManager.mergeMovementsAvailable, traverse the grid in two directions (Up, Left) and 
 for every tile look if the offset tile is mergeable. 
-SOLUTION CODE 
+### SOLUTION CODE 
 mergeMovementsAvailable(){
 Stream.of(Direction.UP, Direction.LEFT).parallel().forEach(direction -> {
 GridOperator.traverseGrid((x, y) -> {
@@ -654,13 +660,13 @@ numMergeableTile.incrementAndGet();
 return 0;});
 });
 }
-STEP 37 
+## STEP 37 
 In GameManager.move.setOnFinished, call mergeMovementsAvailable if 
 randomAvailableLocation == null and print Game Over, else try to add a new tile if tiles were 
 moved 
 In GameManager.addAndAnimateRandomTile, after last movement on full grid, check if there 
 are movements available  
-SOLUTION CODE 
+### SOLUTION CODE 
 setOnFinished(){
 if(mergeMovementsAvailable()==0){
 System.out.println("Game Over");
@@ -674,18 +680,18 @@ System.out.println("Game Over");
 }
 });
 }
-STEP 38 
+## STEP 38 
 In GameManager.move, check if the merged tile is 2048, and print win.  
-SOLUTION CODE 
+### SOLUTION CODE 
 move(){
 if(tileToBeMerged.getValue()==2048){
 System.out.println("You win!");
 }
 }
-STEP 39 
+## STEP 39 
 In Board.initGameProperties, style buttons, set listeners to click. In both, remove overlay. In 
 bTry also remove tiles and reset all game properties.  
-SOLUTION CODE 
+### SOLUTION CODE 
 initGameProperties(){
 bTry.getStyleClass().add("game-button");
 bTry.setOnAction(e->{getChildren().removeAll(overlay, buttonsOverlay);
@@ -699,10 +705,10 @@ resetGame.set(true);
 bContinue.getStyleClass().add("game-button");
 bContinue.setOnAction(e->getChildren().removeAll(overlay, buttonsOverlay));
 }
-STEP 40 
+## STEP 40 
 In Board.initGameProperties, add listeners to game over, won properties. Set style to overlay, 
 set text and its style, add buttons, and add overlay to board. 
-SOLUTION CODE 
+### SOLUTION CODE 
 initGameProperties(){
 gameOverProperty.addListener((observable, oldValue, newValue) -> {
 if (newValue) {
@@ -724,10 +730,10 @@ this.getChildren().addAll(overlay,buttonsOverlay);
 }
 });
 }
-STEP 41 
+## STEP 41 
 In Board constructor call initGameProperties. In GameManager.move, add set win with setGameWin, and setGameOver in onFinished 
 In GameManager.addAndAnimateRandomTile, add setGameOver. 
-SOLUTION CODE 
+### SOLUTION CODE 
 Board(){
 initGameProperties();
 }
@@ -742,10 +748,10 @@ board.setGameOver(true);
 addAndAnimateRandomTile(){
 board.setGameOver(true);
 }
-STEP 42 
+## STEP 42 
 In GameManager constructor add a listener to reset game property to start the game again 
 with a clear grid. 
-SOLUTION CODE 
+### SOLUTION CODE 
 GameManager(){
 board.resetGameProperty().addListener((ov, b, b1) -> {
 if (b1) {
@@ -756,26 +762,26 @@ startGame();
 }
 Screenshots after #42  
  
-STEP 43 
+## STEP 43 
 In GameManager.optionalTile, return an Optional of nullable from a given location on the map 
 gameGrid. 
-SOLUTION CODE 
+### SOLUTION CODE 
 optionalTile(){
 return Optional.ofNullable(gameGrid.get(loc));
 }
-STEP 44 
+## STEP 44 
 In GameManager.mergeMovementsAvailable, use optionalTile to find pairs of mergeable tiles 
-SOLUTION CODE 
+### SOLUTION CODE 
 mergeMovementsAvailable (){
 optionalTile(thisloc).ifPresent(t1->{
 optionalTile(thisloc.offset(direction)).filter(t2->t1.isMergeable(t2))
 .ifPresent(t2->numMergeableTile.incrementAndGet());
 });
 }
-STEP 45 
+## STEP 45 
 In GameManager.move, use optionalTile to traverse the grid, with an atomicInteger to return 
 the results 
-SOLUTION CODE 
+### SOLUTION CODE 
 move (){
 GridOperator.sortGrid(direction);
 board.setPoints(0);
