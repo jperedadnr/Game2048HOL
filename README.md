@@ -591,22 +591,25 @@ IntStream.range(0, 4).boxed().forEach(i->{
 
 Back to [Index][I0]
 ***
-## STEP 19 
-In GameManager.animateExistingTile, animate the tile translation from its actual location to 
-the new one, in 65 ms. 
+## STEP 19. Animating tile movement 
+Animate the tile translation from its actual location to the new one, in 65 ms. 
 ### SOLUTION CODE 
-animateExistingTile(){
+* *Class*: `GameManager`
+* *Method*: `animateExistingTile`
+* [preview][19]
+* Copy and paste the following code snippet:
+```java
 KeyValue kvX = new KeyValue(tile.layoutXProperty(),
-newLocation.getLayoutX(Board.CELL_SIZE) - (tile.getMinHeight() / 2),
-Interpolator.EASE_OUT);
+                            newLocation.getLayoutX(Board.CELL_SIZE) - (tile.getMinHeight() / 2), 
+                            Interpolator.EASE_OUT);
 KeyValue kvY = new KeyValue(tile.layoutYProperty(),
-newLocation.getLayoutY(Board.CELL_SIZE) - (tile.getMinHeight() / 2),
-Interpolator.EASE_OUT);
+                            newLocation.getLayoutY(Board.CELL_SIZE) - (tile.getMinHeight() / 2), 
+                            Interpolator.EASE_OUT);
 KeyFrame kfX = new KeyFrame(Duration.millis(65), kvX);
 KeyFrame kfY = new KeyFrame(Duration.millis(65), kvY);
 timeline.getKeyFrames().add(kfX);
 timeline.getKeyFrames().add(kfY);
-}
+```
 
 Back to [Index][I0]
 ***
@@ -1160,6 +1163,7 @@ Back to [Index][I0]
 [16.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L132
 [17]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L357-360
 [18]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L176-194
+[19]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L375-384
 
 [screen5]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step5.jpg
 [screen9]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step9.jpg
