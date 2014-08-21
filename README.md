@@ -48,6 +48,7 @@ Now follow these steps
 #### 7. [Create a random Tile][I7]
 #### 8. [Layout the tile at its location][I8]
 #### 9. [Let's start the Game!][I9]
+#### 10. [CSS styling][I10]
 
 ***
 
@@ -56,7 +57,7 @@ Create an instance of `GameManager` in `Game2048` class and add it to the `root`
 
 ### SOLUTION CODE
 * *Class*: `Game2048`
-* *Method*: `start()`
+* *Method*: `start`
 * [preview][1]
 * Copy and paste the following code snippet:
 ```java
@@ -285,7 +286,7 @@ Load the font *ClearSans-Bold.ttf* at the beginning of the application
 
 #### SOLUTION CODE 
 * *Class*: `Game2048`
-* *Method*: init
+* *Method*: `init`
 * [preview][10.1]
 * Copy and paste the following code snippet:
 ```java
@@ -296,7 +297,7 @@ Enable css styling in the application by loading the *game.css* file. Apply `"ga
 
 #### SOLUTION CODE 
 * *Class*: `Game2048`
-* *Method*: `init`
+* *Method*: `start`
 * [preview][10.2]
 * Copy and paste the following code snippet:
 ```java
@@ -305,13 +306,13 @@ root.getStyleClass().addAll("game-root");
 ```
 
 Apply the styles to nodes in the `hTop` container: 
-‐ `lblTitle`: `"game-label"`, `"game-title"` 
-‐ `lblSubtitle`: `"game-label"`, `"game-subtitle"` 
-‐ `vScore` and `vRecord`:, `"game-vbox"`
-‐ `lblScore`: `"game-label"`, `"game-score"` 
-‐ `lblTit`: `"game-label"`, `"game-titScore"`
-‐ `lblTitBest`: `"game-label"`, `"game-titScore"` 
-‐ `lblBest`: `"game-label"`, `"game-score"`
+- `lblTitle`: `"game-label"`, `"game-title"` 
+- `lblSubtitle`: `"game-label"`, `"game-subtitle"` 
+- `vScore` and `vRecord`:, `"game-vbox"`
+- `lblScore`: `"game-label"`, `"game-score"` 
+- `lblTit`: `"game-label"`, `"game-titScore"`
+- `lblTitBest`: `"game-label"`, `"game-titScore"` 
+- `lblBest`: `"game-label"`, `"game-score"`
 
 #### SOLUTION CODE 
 * *Class*: `Board`
@@ -1082,3 +1083,4 @@ Back to [Index][I0]
 [I7]: https://github.com/jperedadnr/Game2048HOL#step-7-create-a-random-tile
 [I8]: https://github.com/jperedadnr/Game2048HOL#step-8-layout-the-tile-at-its-location
 [I9]: https://github.com/jperedadnr/Game2048HOL#step-9-lets-start-the-game
+[I10]: https://github.com/jperedadnr/Game2048HOL#step-10-css-styling
