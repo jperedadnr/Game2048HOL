@@ -36,6 +36,18 @@ https://github.com/jperedadnr/Game2048Empty.git
  * Wait till the local copy is created, and the project is opened in NetBeans
  * Select Build and Run to test the (empty) application
 
+Now follow these steps
+
+### INDEX
+#### STEP 1. [Add GameManager into Game2048][I1]
+#### STEP 2. [Add a Board into GameManager][I2]
+#### STEP 3. [Create a score to visualize points][I3]
+#### STEP 4. [Define rectangle corner border size][I4]
+#### STEP 5. [Draw a grid of rectangles in the Board][I5]
+#### STEP 6. [Add Tiles objects into the grid][I6]
+
+***
+
 ## STEP 1. Add GameManager into Game2048
 Create an instance of `GameManager` in `Game2048` class and add it to the `root` object (StackPane).
 
@@ -160,14 +172,13 @@ createGrid();
 Run the project to see the application after completing the first 5 steps
 ![Game2048 after 5 steps][screen5]
 ***
-## STEP 6. Add Tiles objects into the grid
+## STEP 6. Add Tiles into the Grid
 Create a Tile in private constructor.
 Label size cell_size‐13; align center, setText(value)
 Setstyle background color #c9c9c9;
  
 ### SOLUTION CODE
 ```java
-private Tile(int value){
 final int squareSize = Board.CELL_SIZE - 13;
 setMinSize(squareSize, squareSize);
 setMaxSize(squareSize, squareSize);
@@ -176,7 +187,6 @@ setStyle("-fx-background-color: #c9c9c9;");
 setAlignment(Pos.CENTER);this.value = value;
 this.merged = false;
 setText(Integer.toString(value));
-}
 ```
 
 ## STEP 7 
@@ -861,7 +871,16 @@ return result.get();
 [3.1]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L77-98
 [3.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L66
 [4]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L170-172
-[5.1]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L185-187
+[5.1]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L185-189
 [5.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L66
+[6]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Tile.java#L32-46
+[7]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Tile.java#L20
 
 [screen5]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step5.jpg
+
+[I1]: https://github.com/jperedadnr/Game2048HOL#step-1-add-gamemanager-into-game2048
+[I2]: https://github.com/jperedadnr/Game2048HOL#step-2-add-a-board-into-gamemanager
+[I3]: https://github.com/jperedadnr/Game2048HOL#step-3-create-a-score-to-visualize-points
+[I4]: https://github.com/jperedadnr/Game2048HOL#step-4-define-rectangle-corner-border-size
+[I5]: https://github.com/jperedadnr/Game2048HOL#step-5-draw-a-grid-of-rectangles-in-the-board
+[I6]: https://github.com/jperedadnr/Game2048HOL#step-6-add-tiles-objects-into-the-grid
