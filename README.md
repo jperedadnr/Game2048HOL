@@ -42,7 +42,7 @@ Create an instance of `GameManager` in `Game2048` class and add it to the `root`
 ### SOLUTION CODE
 * *Class*: `Game2048`
 * *Method*: `start()`
-* [preview](1)
+* [preview][1]
 * Copy and paste the following code snippet:
 ```java
 gameManager = new GameManager();
@@ -55,7 +55,7 @@ Create an instance of Board in GameManager and add it to it
 ### SOLUTION CODE 
 * *Class*: `GameManager`
 * *Method*: constructor
-* [preview](2)
+* [preview][2]
 * Copy and paste the following code snippet:
 ```java
 board = new Board();
