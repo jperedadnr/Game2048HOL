@@ -461,26 +461,38 @@ Press the right arrow and check the tile from [Screenshot #10][screen10] moves o
 
 Back to [Index][I0]
 ***
-## STEP 15 
-In GameManager.initializeGameGrid, clear the list and add all valid locations, call it before 
-startGame. 
-### SOLUTION CODE 
-GameManager(){
-if(Game2048.## STEP>=15){
-initializeGameGrid();
-}
-}
-initializeGameGrid(){
+## STEP 15. Initializing the game 
+Clear the gameGrid map and the locations list, and then initialize both with all 4x4 valid locations, 
+and null tiles
+
+#### SOLUTION CODE 
+* *Class*: `GameManager`
+* *Method*: `initializeGameGrid`
+* [preview][15.1]
+* Copy and paste the following code snippet:
+```java
 gameGrid.clear();
 locations.clear();
 for(int i=0; i<4; i++){
-for(int j=0; j<4; j++){
-Location location = new Location(i,j);
-locations.add(location);
-gameGrid.put(location, null);
+    for(int j=0; j<4; j++){
+        Location location = new Location(i,j);
+        locations.add(location);
+        gameGrid.put(location, null);
+    }
 }
-}
-}
+```
+
+Call `initializeGameGrid` before `startGame`. 
+
+#### SOLUTION CODE 
+* *Class*: `GameManager`
+* *Method*: constructor
+* [preview][15.2]
+* Copy and paste the following code snippet:
+```java
+initializeGameGrid();
+gameGrid.clear()
+```
 
 Back to [Index][I0]
 ***
@@ -1101,6 +1113,8 @@ Back to [Index][I0]
 [12]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Location.java#L64
 [13]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L157-170
 [14]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Game2048.java#L45-51
+[15.1]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L79-89
+[15.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L65
 
 [screen5]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step5.jpg
 [screen9]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step9.jpg
