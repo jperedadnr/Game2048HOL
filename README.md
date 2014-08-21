@@ -56,6 +56,7 @@ Now follow these steps
 ##### 15. [Initializing the game][I15]
 ##### 16. [Random tiles, random locations][I16]
 ##### 17. [How far can a tile go?][I17]
+##### 18. [A new approach to move the tiles][I18]
 
 ***
 
@@ -1177,3 +1178,4 @@ Back to [Index][I0]
 [I15]: https://github.com/jperedadnr/Game2048HOL#step-15-initializing-the-game
 [I16]: https://github.com/jperedadnr/Game2048HOL#step-16-random-tiles-random-locations
 [I17]: https://github.com/jperedadnr/Game2048HOL#step-17-how-far-can-a-tile-go
+[I18]: https://github.com/jperedadnr/Game2048HOL#step-18-a-new-approach-to-move-the-tiles
