@@ -58,7 +58,7 @@ Now follow these steps
 ##### 17. [How far can a tile go?][I17]
 ##### 18. [A new approach to move the tiles][I18]
 ##### 19. [Animating one tile movement][I19]
-##### 20. [Animating all the tiles together][I19]
+##### 20. [Animating all the tiles together][I20]
 
 ***
 
@@ -673,6 +673,11 @@ parallelTransition.play();
 parallelTransition.getChildren().clear();
 ```
 
+### Screenshot after #20 
+Run the project to see the application after completing the first 20 steps. 
+Press an arrow and check the tiles are moving smoothly to the farthest position in the grid
+![Game2048 after 20 steps][screen20]
+
 Back to [Index][I0]
 ***
 ## STEP 21 
@@ -1209,6 +1214,7 @@ Back to [Index][I0]
 [screen9]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step9.jpg
 [screen10]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step10.jpg
 [screen14]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step14.jpg
+[screen20]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step20.jpg
 
 [I0]: https://github.com/jperedadnr/Game2048HOL#index
 [I1]: https://github.com/jperedadnr/Game2048HOL#step-1-add-gamemanager-into-game2048
