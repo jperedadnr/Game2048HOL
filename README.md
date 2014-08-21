@@ -51,6 +51,7 @@ Now follow these steps
 ##### 10. [CSS styling][I10]
 ##### 11. [Connect arrow keys with Direction][I11]
 ##### 12. [Moving one tile][I12]
+##### 13. [Moving tiles on the board][I13]
 
 ***
 
@@ -401,7 +402,7 @@ return new Location(x + direction.getX(), y + direction.getY());
 ```
 Back to [Index][I0]
 ***
-## STEP 13. Moving tiles in the board 
+## STEP 13. Moving tiles on the board 
 - Get a list of tiles in the `gridGroup` and then remove all the list from 
 the `gridGroup`
 - Create new tiles based in the old ones, applying an offset in the specified direction
@@ -1107,4 +1108,4 @@ Back to [Index][I0]
 [I10]: https://github.com/jperedadnr/Game2048HOL#step-10-css-styling
 [I11]: https://github.com/jperedadnr/Game2048HOL#step-11-connect-arrow-keys-with-direction
 [I12]: https://github.com/jperedadnr/Game2048HOL#step-12-moving-one-tile
-[I13]: https://github.com/jperedadnr/Game2048HOL#step-12-moving-one-tile
+[I13]: https://github.com/jperedadnr/Game2048HOL#step-13-moving-tiles-on-the-board
