@@ -57,7 +57,7 @@ Now follow these steps
 ##### 16. [Random tiles, random locations][I16]
 ##### 17. [How far can a tile go?][I17]
 ##### 18. [A new approach to move the tiles][I18]
-##### 19. [Animating tile movement][I19]
+##### 19. [Animating one tile movement][I19]
 
 ***
 
@@ -592,7 +592,7 @@ IntStream.range(0, 4).boxed().forEach(i->{
 
 Back to [Index][I0]
 ***
-## STEP 19. Animating tile movement 
+## STEP 19. Animating one tile movement 
 Animate the tile translation from its actual location to the new one, in 65 ms. 
 ### SOLUTION CODE 
 * *Class*: `GameManager`
@@ -614,29 +614,63 @@ timeline.getKeyFrames().add(kfY);
 
 Back to [Index][I0]
 ***
-## STEP 20 
-In GameManager.move, use a parallelTransition to play the tiles animation. Use a volatile 
-variable to avoid input while moving. 
-### SOLUTION CODE 
-move(){
+## STEP 20. Animating all the tiles together
+All the tile animations will be executed at the same time using a `ParallelTransition`. 
+While playing no movement will be allowed. Use the volatile `movingTiles` to exit `move` when it's true
+
+#### SOLUTION CODE 
+* *Class*: `GameManager`
+* *Method*: `move`
+* [preview][20.1]
+* Copy and paste the following code snippet:
+```java
 synchronized (gameGrid) {
-if (movingTiles) {
-return;
+    if (movingTiles) {
+        return;
+    }
 }
-}
-...
+```
+While traversing the grid with valid tiles, add those that are moving to the `parallelTranstion`, 
+instead of using `board.moveTile`
+
+#### SOLUTION CODE 
+* *Class*: `GameManager`
+* *Method*: `move`
+* [preview][20.2]
+* Copy and paste the following code snippet:
+```java
 parallelTransition.getChildren().add(animateExistingTile(t, newLoc));
-...
-parallelTransition.setOnFinished(e -> {synchronized (gameGrid) {
-movingTiles = false;
-}
+```
+
+Add a listener to find when the animations have finished, and there set `movingTiles` to false
+
+#### SOLUTION CODE 
+* *Class*: `GameManager`
+* *Method*: `move`
+* [preview][20.3]
+* Copy and paste the following code snippet:
+```java
+parallelTransition.setOnFinished(e -> {
+    synchronized (gameGrid) {
+        movingTiles = false;
+    }
 });
+```
+
+Set `movingTiles` to true. start the animation and clear de list of animations.
+
+#### SOLUTION CODE 
+* *Class*: `GameManager`
+* *Method*: `move`
+* [preview][20.4]
+* Copy and paste the following code snippet:
+```java
 synchronized (gameGrid) {
-movingTiles = true;
+    movingTiles = true;
 }
 parallelTransition.play();
 parallelTransition.getChildren().clear();
-}
+```
 
 Back to [Index][I0]
 ***
@@ -1165,6 +1199,10 @@ Back to [Index][I0]
 [17]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L357-360
 [18]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L176-194
 [19]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L375-384
+[20.1]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L147-151
+[20.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L186
+[20.3]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L296-299
+[20.4]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L338-342
 
 [screen5]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step5.jpg
 [screen9]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step9.jpg
@@ -1190,4 +1228,4 @@ Back to [Index][I0]
 [I16]: https://github.com/jperedadnr/Game2048HOL#step-16-random-tiles-random-locations
 [I17]: https://github.com/jperedadnr/Game2048HOL#step-17-how-far-can-a-tile-go
 [I18]: https://github.com/jperedadnr/Game2048HOL#step-18-a-new-approach-to-move-the-tiles
-[I19]: https://github.com/jperedadnr/Game2048HOL#step-19-animating-tile-movement
+[I19]: https://github.com/jperedadnr/Game2048HOL#step-19-animating-one-tile-movement
