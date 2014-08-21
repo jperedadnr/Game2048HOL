@@ -732,7 +732,7 @@ scaleTransition.play();
 
 Back to [Index][I0]
 ***
-## STEP 23 
+## STEP 23. Playing with new cells on the board 
 When the parallel transition has finished, get a random location, check if it is not null, 
 and create a random tile, add call `addAndAnimateRandomTile`. Else print "Game Over" for the time being 
 
@@ -742,7 +742,6 @@ and create a random tile, add call `addAndAnimateRandomTile`. Else print "Game O
 * [preview][23]
 * Copy and paste the following code snippet:
 ```java
-parallelTransition.setOnFinished(){
 Location randomAvailableLocation = findRandomAvailableLocation();
 if (randomAvailableLocation != null){
     addAndAnimateRandomTile(randomAvailableLocation);
