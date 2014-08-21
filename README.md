@@ -49,6 +49,7 @@ Now follow these steps
 ##### 8. [Layout the tile at its location][I8]
 ##### 9. [Let's start the Game!][I9]
 ##### 10. [CSS styling][I10]
+##### 11. [Connect arrow keys with Direction][I11]
 
 ***
 
@@ -386,12 +387,17 @@ return valueOf(keyCode.name());
 ```
 Back to [Index][I0]
 ***
-## STEP 12 
-In Location, add offset method creating a new Location based on the actual and a direction 
+## STEP 12. Moving one tile 
+Return a new Location based on the actual and an offset in the specified direction 
+
 ### SOLUTION CODE 
-offset(direction){
+* *Class*: `Location`
+* *Method*: `offset`
+* [preview][12]
+* Copy and paste the following code snippet:
+```java
 return new Location(x + direction.getX(), y + direction.getY());
-}
+```
 Back to [Index][I0]
 ***
 ## STEP 13 
@@ -1089,3 +1095,4 @@ Back to [Index][I0]
 [I8]: https://github.com/jperedadnr/Game2048HOL#step-8-layout-the-tile-at-its-location
 [I9]: https://github.com/jperedadnr/Game2048HOL#step-9-lets-start-the-game
 [I10]: https://github.com/jperedadnr/Game2048HOL#step-10-css-styling
+[I11]: https://github.com/jperedadnr/Game2048HOL#step-11-connect-arrow-keys-with-direction
