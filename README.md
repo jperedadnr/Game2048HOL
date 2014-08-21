@@ -46,6 +46,7 @@ Now follow these steps
 #### 5. [Draw a grid of rectangles in the Board][I5]
 #### 6. [Add Tiles into the grid][I6]
 #### 7. [Create a random Tile][I7]
+#### 8. [Layout the tile at its location][I8]
 
 ***
 
@@ -1011,3 +1012,4 @@ Back to [Index][I0]
 [I5]: https://github.com/jperedadnr/Game2048HOL#step-5-draw-a-grid-of-rectangles-in-the-board
 [I6]: https://github.com/jperedadnr/Game2048HOL#step-6-add-tiles-into-the-grid
 [I7]: https://github.com/jperedadnr/Game2048HOL#step-7-create-a-random-tile
+[I8]: https://github.com/jperedadnr/Game2048HOL#step-8-layout-the-tile-at-its-location
