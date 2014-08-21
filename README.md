@@ -484,7 +484,7 @@ for(int i=0; i<4; i++){
 }
 ```
 
-Call `initializeGameGrid` before `startGame`. 
+Call `initializeGameGrid` before `startGame`
 
 #### SOLUTION CODE 
 * *Class*: `GameManager`
@@ -532,16 +532,21 @@ gameGrid.values().stream().filter(Objects::nonNull).forEach(board::addTile);
 
 Back to [Index][I0]
 ***
-## STEP 17 
-In GameManager.findFarthestLocation, search for the farthest location in the direction of the 
-movement without any tiles and inside the grid. 
+## STEP 17. How far can a tile go?
+Search for the farthest location a tile can be moved in the specified direction, 
+over empty cells and inside the grid
+
 ### SOLUTION CODE 
-findFarthestLocation(){
+* *Class*: `GameManager`
+* *Method*: `findFarthestLocation`
+* [preview][17]
+* Copy and paste the following code snippet:
+```java
 do {
-farthest = location;
-location = farthest.offset(direction);
+    farthest = location;
+    location = farthest.offset(direction);
 } while (location.isValidFor() && gameGrid.get(location)==null);
-}
+```
 
 Back to [Index][I0]
 ***
@@ -1134,6 +1139,7 @@ Back to [Index][I0]
 [15.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L65
 [16.1]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L113-121
 [16.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L132
+[17]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L357-360
 
 [screen5]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step5.jpg
 [screen9]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step9.jpg
