@@ -55,6 +55,7 @@ Now follow these steps
 ##### 14. [Listening to arrow keys][I14]
 ##### 15. [Initializing the game][I15]
 ##### 16. [Random tiles, random locations][I16]
+##### 17. [How far can a tile go][I17]
 
 ***
 
@@ -1163,3 +1164,4 @@ Back to [Index][I0]
 [I14]: https://github.com/jperedadnr/Game2048HOL#step-14-listening-to-arrow-keys
 [I15]: https://github.com/jperedadnr/Game2048HOL#step-15-initializing-the-game
 [I16]: https://github.com/jperedadnr/Game2048HOL#step-16-random-tiles-random-locations
+[I17]: https://github.com/jperedadnr/Game2048HOL#step-17-how-far-can-a-tile-go
