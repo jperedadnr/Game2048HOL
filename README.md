@@ -55,7 +55,7 @@ Now follow these steps
 ##### 14. [Listening to arrow keys][I14]
 ##### 15. [Initializing the game][I15]
 ##### 16. [Random tiles, random locations][I16]
-##### 17. [How far can a tile go][I17]
+##### 17. [How far can a tile go?][I17]
 
 ***
 
@@ -551,25 +551,36 @@ do {
 
 Back to [Index][I0]
 ***
-## STEP 18 
-In GameManager.move, replace board.gridGroup with gameGrid, using a double IntStream to 
-traverse the grid, moving the tiles to the farthest location possible (location & layout). 
+## STEP 18. Moving tiles   
+Instead of using `board.gridGroup` from [Step 13][I13] to move the tiles, we'll use now `gameGrid`, 
+using a double `IntStream` to traverse the grid. For every valid tile, find the farthest location possible. 
+If it's different from the actual one, set its layout with `board.moveTile()`, update `gameGrid` in the old 
+location with null, and put the tile in the new location, and finally set the location of the tile.
+
+> **Note**: There's an issue with this approach, as the followed order is from top to bottom or left to right. 
+The first tiles can't be moved as the next ones hasn't been moved jet, and they get stuck. This will be addressed later on.
+
 ### SOLUTION CODE 
-move(){
+* *Class*: `GameManager`
+* *Method*: `move`
+* [preview][18]
+* Copy and paste the following code snippet:
+```java
 IntStream.range(0, 4).boxed().forEach(i->{
-IntStream.range(0, 4).boxed().forEach(j->{
-Tile t=gameGrid.get(new Location(i,j));
-if(t!=null){
-final Location newLoc=findFarthestLocation(t.getLocation(),direction);
-if(!newLoc.equals(t.getLocation())){
-board.moveTile(t, newLoc);
-gameGrid.put(newLoc, t);gameGrid.replace(t.getLocation(),null);
-t.setLocation(newLoc);
-}
-}
+    IntStream.range(0, 4).boxed().forEach(j->{
+        Tile t=gameGrid.get(new Location(i,j));
+        if(t!=null){
+            final Location newLoc=findFarthestLocation(t.getLocation(),direction);
+            if(!newLoc.equals(t.getLocation())){
+                board.moveTile(t, newLoc);
+                gameGrid.put(newLoc, t);
+                gameGrid.replace(t.getLocation(),null);
+                t.setLocation(newLoc);
+            }
+        }
+    });
 });
-});
-}
+```
 
 Back to [Index][I0]
 ***
@@ -1141,6 +1152,7 @@ Back to [Index][I0]
 [16.1]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L113-121
 [16.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L132
 [17]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L357-360
+[18]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L176-194
 
 [screen5]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step5.jpg
 [screen9]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step9.jpg
