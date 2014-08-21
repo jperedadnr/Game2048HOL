@@ -15,7 +15,7 @@ public class Tile extends Label {
     private boolean merged;
 
     public static Tile newRandomTile() {
-        // TO-DO. Create random value, 90% chance 2, 10% 4
+        // TO-DO. Step 7. Create random value, 90% chance 2, 10% 4
         
         // -->
         return newTile(2);
