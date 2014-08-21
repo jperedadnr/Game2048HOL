@@ -497,7 +497,7 @@ gameGrid.clear()
 
 Back to [Index][I0]
 ***
-## STEP 16 
+## STEP 16. Random tiles, random locations 
 Shuffle a copy of `locations` list, and add two random tiles at the first two locations of the shuffled 
 list to `gameGrid` and call `redrawTilesInGameGrid`
 
