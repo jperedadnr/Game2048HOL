@@ -39,16 +39,16 @@ https://github.com/jperedadnr/Game2048Empty.git
 Now follow these steps
 
 ### INDEX
-#### 1. [Add GameManager into Game2048][I1]
-#### 2. [Add a Board into GameManager][I2]
-#### 3. [Create a score to visualize points][I3]
-#### 4. [Define rectangle corner border size][I4]
-#### 5. [Draw a grid of rectangles in the Board][I5]
-#### 6. [Add Tiles into the grid][I6]
-#### 7. [Create a random Tile][I7]
-#### 8. [Layout the tile at its location][I8]
-#### 9. [Let's start the Game!][I9]
-#### 10. [CSS styling][I10]
+##### 1. [Add GameManager into Game2048][I1]
+##### 2. [Add a Board into GameManager][I2]
+##### 3. [Create a score to visualize points][I3]
+##### 4. [Define rectangle corner border size][I4]
+##### 5. [Draw a grid of rectangles in the Board][I5]
+##### 6. [Add Tiles into the grid][I6]
+##### 7. [Create a random Tile][I7]
+##### 8. [Layout the tile at its location][I8]
+##### 9. [Let's start the Game!][I9]
+##### 10. [CSS styling][I10]
 
 ***
 
@@ -373,13 +373,17 @@ Run the project to see the application after completing the first 10 steps
  
 Back to [Index][I0]
 ***
-## STEP 11 
-In Direction, add valueFor static method, from KeyCode get valueOf as Direction 
-### SOLUTION CODE 
-valueFor(){
-return valueOf(keyCode.name());
-}
+## STEP 11. Connect arrow keys with Direction
+Return the enum constant of the type with the specified name from a KeyCode 
 
+### SOLUTION CODE 
+* *Class*: `Direction`
+* *Method*: `valueFor`
+* [preview][11]
+* Copy and paste the following code snippet:
+```java
+return valueOf(keyCode.name());
+```
 Back to [Index][I0]
 ***
 ## STEP 12 
@@ -1068,6 +1072,7 @@ Back to [Index][I0]
 [10.4]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L176-178
 [10.5]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L201-202
 [10.6]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Tile.java#L40
+[11]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Direction.java#L37
 
 [screen5]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step5.jpg
 [screen9]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step9.jpg
