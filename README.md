@@ -62,7 +62,7 @@ Now follow these steps
 ##### 21. [Find a random available location][I21]
 ##### 22. [Adding and animating new tiles][I22]
 ##### 23. [Playing with new cells on the board][I23]
-##### 24. [Introducing the GridOperator][I23]
+##### 24. [Introducing the GridOperator][I24]
 
 ***
 
