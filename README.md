@@ -551,7 +551,7 @@ do {
 
 Back to [Index][I0]
 ***
-## STEP 18. Moving tiles   
+## STEP 18. A new approach to move the tiles   
 Instead of using `board.gridGroup` from [Step 13][I13] to move the tiles, we'll use now `gameGrid`, 
 using a double `IntStream` to traverse the grid. For every valid tile, find the farthest location possible. 
 If it's different from the actual one, set its layout with `board.moveTile()`, update `gameGrid` in the old 
