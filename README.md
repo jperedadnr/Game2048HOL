@@ -60,6 +60,7 @@ Now follow these steps
 ##### 19. [Animating one tile movement][I19]
 ##### 20. [Animating all the tiles together][I20]
 ##### 21. [Find a random available location][I21]
+##### 22. [Adding and animating new tiles][I22]
 
 ***
 
@@ -732,21 +733,30 @@ scaleTransition.play();
 Back to [Index][I0]
 ***
 ## STEP 23 
-In GameManager.move, in parallel.OnFinished, get a randomLocation, check not null, create 
-random tile, add to board and to map. Else print Game Over 
+When the parallel transition has finished, get a random location, check if it is not null, 
+and create a random tile, add call `addAndAnimateRandomTile`. Else print "Game Over" for the time being 
+
 ### SOLUTION CODE 
-move(){
+* *Class*: `GameManager`
+* *Method*: `move`
+* [preview][23]
+* Copy and paste the following code snippet:
+```java
 parallelTransition.setOnFinished(){
 Location randomAvailableLocation = findRandomAvailableLocation();
 if (randomAvailableLocation != null){
-addAndAnimateRandomTile(randomAvailableLocation);
+    addAndAnimateRandomTile(randomAvailableLocation);
 } else {
-System.out.println("Game Over");
+    System.out.println("Game Over");
 }
-}
-}
-Screenshot after #23 
- 
+```
+
+### Screenshot after #23 
+Run the project to see the application after completing the first 23 steps. 
+Press the arrows in any directions, check the tiles are moving smoothly to the farthest position 
+in the grid, and after each movement a new tile appears
+![Game2048 after 23 steps][screen23]
+
 Back to [Index][I0]
 ***
 ## STEP 24 
@@ -1224,12 +1234,14 @@ Back to [Index][I0]
 [20.4]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L338-342
 [21]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L399-407
 [22]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L420-443
+[23]: https://github.com/jperedadn/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L310-323
 
 [screen5]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step5.jpg
 [screen9]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step9.jpg
 [screen10]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step10.jpg
 [screen14]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step14.jpg
 [screen20]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step20.jpg
+[screen23]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step23.jpg
 
 [I0]: https://github.com/jperedadnr/Game2048HOL#index
 [I1]: https://github.com/jperedadnr/Game2048HOL#step-1-add-gamemanager-into-game2048
@@ -1253,3 +1265,4 @@ Back to [Index][I0]
 [I19]: https://github.com/jperedadnr/Game2048HOL#step-19-animating-one-tile-movement
 [I20]: https://github.com/jperedadnr/Game2048HOL#step-20-animating-all-the-tiles-together
 [I21]: https://github.com/jperedadnr/Game2048HOL#step-21-find-a-random-available-location
+[I22]: https://github.com/jperedadnr/Game2048HOL#step-22-adding-and-animating-new-tiles
