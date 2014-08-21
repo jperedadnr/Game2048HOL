@@ -680,20 +680,26 @@ Press an arrow and check the tiles are moving smoothly to the farthest position 
 
 Back to [Index][I0]
 ***
-## STEP 21 
-In GameManager.findRandomAvailableLocation, from the remaining locations with no tile, 
-shuffle the collection to get a random position, if any. 
+## STEP 21. Find a random available location 
+Get a list of available locations on the grid with no tile, shuffle this collection to get a random position, 
+if there's any left, returning the first one in that case
+
 ### SOLUTION CODE 
-findFarthestLocation(){
-List<Location> availableLocations = locations.stream().filter(l ->
-gameGrid.get(l) == null)
-.collect(Collectors.toList());
+* *Class*: `GameManager`
+* *Method*: `findRandomAvailableLocation`
+* [preview][21]
+* Copy and paste the following code snippet:
+```java
+List<Location> availableLocations = locations.stream().filter(l -> gameGrid.get(l) == null)
+    .collect(Collectors.toList());
+
 if (availableLocations.isEmpty()) {
-return null;
+    return null;
 }
+
 Collections.shuffle(availableLocations);
 location = availableLocations.get(0);
-}
+```
 
 Back to [Index][I0]
 ***
@@ -1209,6 +1215,7 @@ Back to [Index][I0]
 [20.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L186
 [20.3]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L296-299
 [20.4]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L338-342
+[21]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L399-407
 
 [screen5]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step5.jpg
 [screen9]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step9.jpg
