@@ -61,6 +61,7 @@ Now follow these steps
 ##### 20. [Animating all the tiles together][I20]
 ##### 21. [Find a random available location][I21]
 ##### 22. [Adding and animating new tiles][I22]
+##### 23. [Playing with new cells on the board][I23]
 
 ***
 
@@ -1265,3 +1266,4 @@ Back to [Index][I0]
 [I20]: https://github.com/jperedadnr/Game2048HOL#step-20-animating-all-the-tiles-together
 [I21]: https://github.com/jperedadnr/Game2048HOL#step-21-find-a-random-available-location
 [I22]: https://github.com/jperedadnr/Game2048HOL#step-22-adding-and-animating-new-tiles
+[I23]: https://github.com/jperedadnr/Game2048HOL#step-23-playing-with-new-cells-on-the-board
