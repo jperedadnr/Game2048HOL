@@ -759,17 +759,23 @@ in the grid, and after each movement a new tile appears
 
 Back to [Index][I0]
 ***
-## STEP 24 
-In GridOperator, traverseGrid method, apply the application of a functional to every cell of the 
-grid, returning an int with the sum of the results of this functional. 
+## STEP 24. Introducing the GridOperator 
+USing the two lists `traversalX` and `traversalY`, apply an integer binary opertator to every cell on the grid, 
+returning an int with the sum of the results of this functional. 
+
 ### SOLUTION CODE 
-traverseGrid(){
+* *Class*: `GridOperator`
+* *Method*: `traverseGrid`
+* [preview][24]
+* Copy and paste the following code snippet:
+```java
 traversalX.forEach(x -> {
-traversalY.forEach(y -> {
-at.addAndGet(func.applyAsInt(x, y));
+    traversalY.forEach(y -> {
+        at.addAndGet(func.applyAsInt(x, y));
+    });
 });
-});
-}
+```
+
 Back to [Index][I0]
 ***
 ## STEP 25 
@@ -1235,6 +1241,7 @@ Back to [Index][I0]
 [21]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L399-407
 [22]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L420-443
 [23]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L310-323
+[24]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GridOperator.java#L25-29
 
 [screen5]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step5.jpg
 [screen9]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step9.jpg
