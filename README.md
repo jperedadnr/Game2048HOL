@@ -559,10 +559,10 @@ using a double `IntStream` to traverse the grid.
 For every valid tile:
 - Find the farthest location possible. 
 - If it's different from the actual one:
-- - Set its layout with `board.moveTile()`
-- - Update `gameGrid` in the old location with null
-- - Update `gameGrid` with the tile in the new location, 
-- - Finally set the location of the tile.
+  - Set its layout with `board.moveTile()`
+  - Update `gameGrid` in the old location with null
+  - Update `gameGrid` with the tile in the new location, 
+  - Finally set the location of the tile.
 
 > **Note**: There's an issue with this approach, as the followed order is from top to bottom or left to right. 
 The first tiles can't be moved as the next ones hasn't been moved jet, and they get stuck. This will be addressed later on.
