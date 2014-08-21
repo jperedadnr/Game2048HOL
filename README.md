@@ -47,6 +47,7 @@ Now follow these steps
 #### 6. [Add Tiles into the grid][I6]
 #### 7. [Create a random Tile][I7]
 #### 8. [Layout the tile at its location][I8]
+#### 9. [Let's start the Game!][I9]
 
 ***
 
@@ -1032,3 +1033,4 @@ Back to [Index][I0]
 [I6]: https://github.com/jperedadnr/Game2048HOL#step-6-add-tiles-into-the-grid
 [I7]: https://github.com/jperedadnr/Game2048HOL#step-7-create-a-random-tile
 [I8]: https://github.com/jperedadnr/Game2048HOL#step-8-layout-the-tile-at-its-location
+[I9]: https://github.com/jperedadnr/Game2048HOL#step-9-lets-start-the-game
