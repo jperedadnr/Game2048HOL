@@ -60,7 +60,7 @@ Create an instance of `GameManager` in `Game2048` class and add it to the `root`
 gameManager = new GameManager();
 root.getChildren().add(gameManager);
 ```
-Go back to [Index][I0]
+Back to [Index][I0]
 ***
 ## STEP 2. Add a Board into GameManager
 Create an instance of `Board` in `GameManager` class and add it to its list of children.
@@ -74,7 +74,7 @@ Create an instance of `Board` in `GameManager` class and add it to its list of c
 board = new Board();
 getChildren().add(board);
 ```
-Go back to [Index][I0]
+Back to [Index][I0]
 ***
 ## STEP 3. Create a score to visualize points
 Create nodes for `hTop` in `createScore()`, with these steps: 
@@ -128,7 +128,7 @@ Call the method `createScore()` from the constructor of `Board`
 ```java
 createScore();
 ```
-Go back to [Index][I0]
+Back to [Index][I0]
 ***
 ## STEP 4. Define rectangle corner border size
 Create a rectangle located in corners `i*cell_size`, `j*cell_size`, of size `cell_size`x`cell_size`, filled with white color, and with border grey
@@ -143,7 +143,7 @@ cell = new Rectangle(i * CELL_SIZE, j * CELL_SIZE, CELL_SIZE, CELL_SIZE);
 cell.setFill(Color.WHITE);
 cell.setStroke(Color.GREY);
 ```
-Go back to [Index][I0]
+Back to [Index][I0]
 ***
 ## STEP 5. Draw a grid of rectangles in the Board
 Add 4x4 cells to gridGroup, by calling `createCell` method for every cell
@@ -175,7 +175,8 @@ createGrid();
 ### Screenshot after Step 5
 Run the project to see the application after completing the first 5 steps
 ![Game2048 after 5 steps][screen5]
-Go back to [Index][I0]
+
+Back to [Index][I0]
 ***
 ## STEP 6. Add Tiles into the Grid
 Create a Tile in private constructor.
@@ -193,7 +194,7 @@ setAlignment(Pos.CENTER);this.value = value;
 this.merged = false;
 setText(Integer.toString(value));
 ```
-Go back to [Index][I0]
+Back to [Index][I0]
 ***
 ## STEP 7 
 Assign 90% possibilities to random tiles 
