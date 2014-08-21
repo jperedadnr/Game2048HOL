@@ -280,32 +280,45 @@ Run the project to see the application after completing the first 9 steps
  
 Back to [Index][I0]
 *** 
-## STEP 10 
-In Game2048, load the custom font, enable css styling 
-Apply all the styles to: 
-*Game2048‐>root, game‐root 
-*Tile, game‐label, ‘game‐tile’+value, and remove hardcode style. 
-*Board: 
-‐lblTitle, game‐label, game‐title 
-‐lblSubtitle, game‐label, game‐subtitle 
-‐vScore y vRecord, game‐vbox 
-‐lblScore, game‐label, game‐score 
-‐lblTit, game‐label, game‐titScore 
-‐lblTitBest, game‐label, game‐titScore 
-‐lblBest, game‐label, game‐score 
-‐Rectangle, game‐grid‐cell, Adjust arcsize in cell to Cell_size/6; 
-‐GridGroup, game‐grid 
-‐hBottom, game‐backGrid ### SOLUTION CODE 
-init (){
-Font.loadFont(Game2048.class.getResource("ClearSans-Bold.ttf").toExternalForm(),
-10.0);
-}
-start(){
-scene.getStylesheets().add(Game2048.class.getResource("game.css").toExternalForm(
-));
+## STEP 10. CSS styling
+Load the font *ClearSans-Bold.ttf* at the beginning of the application
+
+#### SOLUTION CODE 
+* *Class*: `Game2048`
+* *Method*: init
+* [preview][10.1]
+* Copy and paste the following code snippet:
+```java
+Font.loadFont(Game2048.class.getResource("ClearSans-Bold.ttf").toExternalForm(),10.0);
+```
+
+Enable css styling in the application by loading the *game.css* file. Apply `"game-root"` selector to the root
+
+#### SOLUTION CODE 
+* *Class*: `Game2048`
+* *Method*: `init`
+* [preview][10.2]
+* Copy and paste the following code snippet:
+```java
+scene.getStylesheets().add(Game2048.class.getResource("game.css").toExternalForm());
 root.getStyleClass().addAll("game-root");
-}
-createScore(){
+```
+
+Apply the styles to nodes in the `hTop` container: 
+‐ `lblTitle`: `"game-label"`, `"game-title"` 
+‐ `lblSubtitle`: `"game-label"`, `"game-subtitle"` 
+‐ `vScore` and `vRecord`:, `"game-vbox"`
+‐ `lblScore`: `"game-label"`, `"game-score"` 
+‐ `lblTit`: `"game-label"`, `"game-titScore"`
+‐ `lblTitBest`: `"game-label"`, `"game-titScore"` 
+‐ `lblBest`: `"game-label"`, `"game-score"`
+
+#### SOLUTION CODE 
+* *Class*: `Board`
+* *Method*: `createScore`
+* [preview][10.3]
+* Copy and paste the following code snippet:
+```java
 lblTitle.getStyleClass().addAll("game-label","game-title");
 lblSubtitle.getStyleClass().addAll("game-label","game-subtitle");
 vScore.getStyleClass().add("game-vbox");
@@ -314,21 +327,49 @@ lblScore.getStyleClass().addAll("game-label","game-score");
 vRecord.getStyleClass().add("game-vbox");
 lblTitBest.getStyleClass().addAll("game-label","game-titScore");
 lblBest.getStyleClass().addAll("game-label","game-score");
-}
-createCell(){
+```
+
+Adjust arc size in cells to `cell_size/6` and apply `"game-grid-cell"` style
+
+#### SOLUTION CODE 
+* *Class*: `Board`
+* *Method*: `createCell`
+* [preview][10.4]
+* Copy and paste the following code snippet:
+```java
 cell.setArcHeight(CELL_SIZE/6d);
 cell.setArcWidth(CELL_SIZE/6d);
 cell.getStyleClass().add("game-grid-cell");
-}
-createGrid(){
+```
+
+Apply `"game-grid"` to `gridGroup` and `"game-backGrid"` to `hBottom` 
+
+#### SOLUTION CODE 
+* *Class*: `Board`
+* *Method*: `createGrid`
+* [preview][10.5]
+* Copy and paste the following code snippet:
+```java
 gridGroup.getStyleClass().add("game-grid");
 hBottom.getStyleClass().add("game-backGrid");
-}
-Tile(){
-getStyleClass().addAll("game-label", "game-tile-" + value);
-}
-Screenshot after #10  
+```
 
+Apply to tiles the styles `"game-label"` and `"game-tile-"+value`, and remove 
+the previusly assigned style. 
+
+#### SOLUTION CODE 
+* *Class*: `Tile`
+* *Method*: private constructor
+* [preview][10.6]
+* Copy and paste the following code snippet:
+```java
+getStyleClass().addAll("game-label", "game-tile-" + value);
+```
+
+### Screenshot after #10
+Run the project to see the application after completing the first 10 steps
+![Game2048 after 10 steps][screen10]
+ 
 Back to [Index][I0]
 ***
 ## STEP 11 
@@ -1020,9 +1061,16 @@ Back to [Index][I0]
 [8.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L226
 [9.1]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L107-111
 [9.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L69
+[10.1]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Game2048.java#L24
+[10.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Game2048.java#L40-41
+[10.3]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L102-109
+[10.4]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L176-178
+[10.5]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L201-202
+[10.6]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Tile.java#L40
 
 [screen5]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step5.jpg
 [screen9]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step9.jpg
+[screen10]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step10.jpg
 
 [I0]: https://github.com/jperedadnr/Game2048HOL#index
 [I1]: https://github.com/jperedadnr/Game2048HOL#step-1-add-gamemanager-into-game2048
