@@ -39,12 +39,12 @@ https://github.com/jperedadnr/Game2048Empty.git
 Now follow these steps
 
 ### INDEX
-#### STEP 1. [Add GameManager into Game2048][I1]
-#### STEP 2. [Add a Board into GameManager][I2]
-#### STEP 3. [Create a score to visualize points][I3]
-#### STEP 4. [Define rectangle corner border size][I4]
-#### STEP 5. [Draw a grid of rectangles in the Board][I5]
-#### STEP 6. [Add Tiles objects into the grid][I6]
+#### 1. [Add GameManager into Game2048][I1]
+#### 2. [Add a Board into GameManager][I2]
+#### 3. [Create a score to visualize points][I3]
+#### 4. [Define rectangle corner border size][I4]
+#### 5. [Draw a grid of rectangles in the Board][I5]
+#### 6. [Add Tiles objects into the grid][I6]
 
 ***
 
