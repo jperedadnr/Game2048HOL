@@ -69,7 +69,7 @@ Create nodes for `hTop` in `createScore()`, with these steps:
 - Create a `VBox` named `vScores` and an `HBox`named `hScores` with spacing 5
 - Create a `Label` named `lblTit` with text `"SCORE"`, and add it to `vScore`, as well as `lblScore`
 - Create a `VBox` named `vRecord` and a `Label` named `lblTitBest` with text `"BEST"`, and add it to `vRecord`, as well as `lblBest`
-- Add `vScore` and `vRecord` to `hScores`, create an `VBox` named `vFill` with vertical grow priority to grow always, and add `hScores`and `vFill` to `vScores`
+- Add `vScore` and `vRecord` to `hScores`, create a `VBox` named `vFill` with vertical grow priority to grow always, and add `hScores`and `vFill` to `vScores`
 - Finally, add `lblTitle`, `lblSubtitle`, `hFill` and `vScores` to `hTop` 
  
 #### SOLUTION CODE 
@@ -116,22 +116,27 @@ createScore();
 ```
 ***
 ## STEP 4. Define rectangle corner border size
-In createCell method create a rectangle in corners `i*cell_size`, `j*cell_size`, fill with `white` color, and with border `grey`
+Create a rectangle located in corners `i*cell_size`, `j*cell_size`, of size `cell_size`x`cell_size`, filled with white color, and with border grey
 
 ### SOLUTION CODE
-Fill in the missing code into method **createCell()**
+* *Class*: `Board`
+* *Method*: `createCell`
+* [preview][4]
+* Copy and paste the following code snippet:
 ```java
 cell = new Rectangle(i * CELL_SIZE, j * CELL_SIZE, CELL_SIZE, CELL_SIZE);
 cell.setFill(Color.WHITE);
 cell.setStroke(Color.GREY);
 ```
+***
+## STEP 5. Draw a grid of rectangles in the Board
+Add 4x4 cells to gridGroup, by calling `createCell` method for every cell
 
-## STEP 5. Draw a grid of rectangles into **Board** class
-In createGrid(), add 4x4 cells to gridGroup, called from constructor
-> for(i‐>4), for(j‐>4), gridGroup add createCell(i,j) 
-
-### SOLUTION CODE 
-Implement the method **createGrid()** with the following code
+#### SOLUTION CODE 
+* *Class*: `Board`
+* *Method*: `createGrid`
+* [preview][5.1]
+* Copy and paste the following code snippet:
 ```java
 for(int i=0; i<4; i++){
     for(int j=0; j<4; j++){
@@ -140,11 +145,21 @@ for(int i=0; i<4; i++){
 }
 ```
 
-Call method **createGrid()** from constructor of class **Board** 
+Call method `createGrid()` from constructor of class `Board` 
+
+#### SOLUTION CODE
+* *Class*: `Board`
+* *Method*: constructor
+* [preview][5.2]
+* Copy and paste the following code snippet:
 ```java
 createGrid();
 ```
 
+### Screenshot after Step 5
+Run the project to see the application after completing the first 5 steps
+![Game2048 after 5 steps][screen5]
+***
 ## STEP 6. Add Tiles objects into the grid
 Create a Tile in private constructor.
 Label size cell_size‐13; align center, setText(value)
@@ -846,5 +861,7 @@ return result.get();
 [3.1]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L77-98
 [3.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L66
 [4]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L170-172
-[5]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L185-187
+[5.1]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L185-187
+[5.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L66
 
+[screen5]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step5.jpg
