@@ -36,31 +36,32 @@ https://github.com/jperedadnr/Game2048Empty.git
  * Wait till the local copy is created, and the project is opened in NetBeans
  * Select Build and Run to test the (empty) application
 
-## STEP 1. Add GameManager object into Game2048 class
+## STEP 1. Add GameManager into Game2048
 Create an instance of `GameManager` in `Game2048` class and add it to the `root` object (StackPane).
 
 ### SOLUTION CODE
-Copy and paste the following code snippet.
-
 * *Class*: `Game2048`
 * *Method*: `start()`
-* [preview](https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Game2048.java#L33)
-* code snippet:
+* [preview](https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Game2048.java#L34-35)
+* Copy and paste the following code snippet:
 ```java
 gameManager = new GameManager();
 root.getChildren().add(gameManager);
 ```
 ***
 ## STEP 2. Add a Board into GameManager
-Create instance of Board in GameManager and add it to it
+Create an instance of Board in GameManager and add it to it
 
 ### SOLUTION CODE 
-Add the following code into constructor of GameManager
+* *Class*: `GameManager`
+* *Method*: constructor
+* [preview](https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L50-51)
+* Copy and paste the following code snippet:
 ```java
 board = new Board();
 getChildren().add(board);
 ```
-
+***
 ## STEP 3. Create a score to visualize points
 Create nodes for hTop in createScore(), called on Board constructor. 
 - In hTop: Labels "2048" and "FX", empty HBox HGrow always, vScores 
