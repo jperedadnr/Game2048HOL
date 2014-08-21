@@ -50,7 +50,7 @@ root.getChildren().add(gameManager);
 ```
 ***
 ## STEP 2. Add a Board into GameManager
-Create an instance of Board in GameManager and add it to it
+Create an instance of `Board` in `GameManager` class and add it to its list of children.
 
 ### SOLUTION CODE 
 * *Class*: `GameManager`
@@ -63,41 +63,58 @@ getChildren().add(board);
 ```
 ***
 ## STEP 3. Create a score to visualize points
-Create nodes for hTop in createScore(), called on Board constructor. 
-- In hTop: Labels "2048" and "FX", empty HBox HGrow always, vScores 
-- In vScores: hScores, VBox vFill, vgrow always 
-- In hScores: vScore, vRecord, separation 5 
-- In VBox vScore: Label “Score”, Label lblScore 
-- In VBox vRecord: Label “Best”, Label lblBest 
+Create nodes for `hTop` in `createScore()`, with these steps: 
+- Create a `Label` named `lblTitle` with text `"2048"` and other named `lblSubtitle` with text`"FX"`
+- Create an empty `HBox` named `hFill` and set its horizontal grow priority to grow always
+- Create a `VBox` named `vScores` and an `HBox`named `hScores` with spacing 5
+- Create a `Label` named `lblTit' with text `"SCORE"`, and add it to `vScore`, as well as `lblScore`
+- Create a `VBox` named `vRecord` and a `Label` named `lblTitBest' with text `"BEST"`, and add it to `vRecord`, as well as `lblBest`
+- Add `vScore` and ´vRecord` to `hScores`, create an `VBox` named `vFill` with vertical grow priority to grow always, and add `hScores`and `vFill` to `vScores`
+- Finally, add `lblTitle`, `lblSubtitle`, `hFill` and `vScores` to `hTop` 
  
-### SOLUTION CODE 
-Add the following method into class Board
+#### SOLUTION CODE 
+* *Class*: `Board`
+* *Method*: `createScore()`
+* [preview][3.1]
+* Copy and paste the following code snippet:
 ```java
 createScore() {
     Label lblTitle = new Label("2048");
     Label lblSubtitle = new Label("FX");
+
     HBox hFill = new HBox();
     HBox.setHgrow(hFill, Priority.ALWAYS);
+
     VBox vScores = new VBox();
     HBox hScores = new HBox(5);
+
     Label lblTit = new Label("SCORE");
     vScore.getChildren().addAll(lblTit, lblScore);
+
     VBox vRecord = new VBox(0);
     Label lblTitBest = new Label("BEST");
     vRecord.getChildren().addAll(lblTitBest, lblBest);
+
     hScores.getChildren().addAll(vScore,vRecord);
     VBox vFill = new VBox();
     VBox.setVgrow(vFill, Priority.ALWAYS);
     vScores.getChildren().addAll(hScores,vFill);
+
     hTop.getChildren().addAll(lblTitle, lblSubtitle, hFill,vScores);
 }
 ```
 
-Call the method **createScore()** from constructor of Board
+Call the method `createScore()` from the constructor of `Board`
+
+#### SOLUTION CODE 
+* *Class*: `Board`
+* *Method*: constructor
+* [preview][3.2]
+* Copy and paste the following code snippet:
 ```java
 createScore();
 ```
-
+***
 ## STEP 4. Define rectangle corner border size
 In createCell method create a rectangle in corners `i*cell_size`, `j*cell_size`, fill with `white` color, and with border `grey`
 
@@ -826,3 +843,8 @@ return result.get();
  
 [1]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Game2048.java#L34-35
 [2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L50-51
+[3.1]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L77-98
+[3.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L66
+[4]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L170-172
+[5]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L185-187
+
