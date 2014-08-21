@@ -179,29 +179,42 @@ Run the project to see the application after completing the first 5 steps
 Back to [Index][I0]
 ***
 ## STEP 6. Add Tiles into the Grid
-Create a Tile in private constructor.
-Label size cell_size‐13; align center, setText(value)
-Setstyle background color #c9c9c9;
+- Set the size of the tile to `Board.CELL_SIZE-13` to account for the stroke width
+- For now, style the tile background with `#c9c9c9` color
+- Set the tile alignement centered
+- Assign the value from the argument to `value`
+- Finally, set the text with this value, and initialized `merged` as false.
  
 ### SOLUTION CODE
+* *Class*: `Tile`
+* *Method*: private constructor
+* [preview][6]
+* Copy and paste the following code snippet:
 ```java
 final int squareSize = Board.CELL_SIZE - 13;
 setMinSize(squareSize, squareSize);
 setMaxSize(squareSize, squareSize);
 setPrefSize(squareSize, squareSize);
 setStyle("-fx-background-color: #c9c9c9;");
-setAlignment(Pos.CENTER);this.value = value;
+setAlignment(Pos.CENTER);
+
+this.value = value;
 this.merged = false;
 setText(Integer.toString(value));
 ```
 Back to [Index][I0]
 ***
-## STEP 7 
-Assign 90% possibilities to random tiles 
+## STEP 7. Create a random Tile 
+Create a new `Tile` instance, which value being *2* with a 90% possibility or *4* with the 10% remaining
+
 ### SOLUTION CODE 
-newRandomTile{
+* *Class*: `Tile`
+* *Method*: `newRandomTile`
+* [preview][7]
+* Copy and paste the following code snippet:
+```java
 return newTile(new Random().nextDouble() < 0.9 ? 2 : 4);
-}
+```
 Back to [Index][I0]
 ***
 ## STEP 8 
