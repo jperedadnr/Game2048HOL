@@ -911,11 +911,16 @@ return anotherTile != null && getValue()==anotherTile.getValue();
 
 Back to [Index][I0]
 ***
-## STEP 28 
-In GameManager. animateMergedTile method, add a sequential animation, with two scale 
-animations, from 1 to 1.2, ease_in, and from 1.2 to 1 ease_out, in 80 ms each 
+## STEP 28. Animating the merged tiles 
+Add a sequential animation, with two scale animations, from 1.0 to 1.2, ease_in interpolation, 
+and from 1.2 to 1.0, ease_out interpolation, in 80 ms each 
+
 ### SOLUTION CODE 
-animateMergedTile(){
+* *Class*: `GameManager`
+* *Method*: `animateMergedTile`
+* [preview][28]
+* Copy and paste the following code snippet:
+```java
 final ScaleTransition scale0 = new ScaleTransition(Duration.millis(80), tile);
 scale0.setToX(1.2);
 scale0.setToY(1.2);
@@ -925,7 +930,8 @@ scale1.setToX(1.0);
 scale1.setToY(1.0);
 scale1.setInterpolator(Interpolator.EASE_OUT);
 return new SequentialTransition(scale0, scale1);
-}
+```
+
 Back to [Index][I0]
 ***
 ## STEP 29 
@@ -1301,8 +1307,9 @@ Back to [Index][I0]
 [25.4]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L193-196
 [26.1]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GridOperator.java#L38-39
 [26.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L201
-[27.1]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GridOperator.java#L23-87
-[27.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L94
+[27.1]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Tile.java#L83-87
+[27.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Tile.java#L94
+[28]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L457-467
 
 [screen5]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step5.jpg
 [screen9]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step9.jpg
