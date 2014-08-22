@@ -971,18 +971,21 @@ if (tileToBeMerged != null && !tileToBeMerged.isMerged() && t.isMergeable(tileTo
 
 Back to [Index][I0]
 ***
-## STEP 30 
-In GameManager.move, on finished method, remove the tiles in the set from the gridGroup 
-and clear the set. For all the tiles on the board: set to false their merged value. 
+## STEP 30. Cleaning merged tiles 
+When the animations have finished, remove the tiles in the set `mergedToBeRemoved` from the `gridGroup` 
+and clear the set. For all the tiles on the board, set to false their merged property 
+
 ### SOLUTION CODE 
-move(){
-setOnFinished(){
+* *Class*: `GameManager`
+* *Method*: `move`
+* [preview][30]
+* Copy and paste the following code snippet:
+```java
 board.getGridGroup().getChildren().removeAll(mergedToBeRemoved);
 mergedToBeRemoved.clear();
-gameGrid.values().stream().filter(Objects::nonNull).forEach(t-
->t.setMerged(false));
-}
-}
+gameGrid.values().stream().filter(Objects::nonNull).forEach(t->t.setMerged(false));
+```
+
 Screenshot after #30 
 Back to [Index][I0]
 ***
@@ -1323,6 +1326,7 @@ Back to [Index][I0]
 [27.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Tile.java#L94
 [28]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L457-467
 [29]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L215-240
+[30]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L303-305
 
 [screen5]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step5.jpg
 [screen9]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step9.jpg
