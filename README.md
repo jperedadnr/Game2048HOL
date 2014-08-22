@@ -1012,54 +1012,93 @@ hBottom.setClip(rect);
 
 Back to [Index][I0]
 ***
-## STEP 32 
-In Board.createScore, add style for lblPoints, add to board. Add a listener to text changes, so it 
-gets centered right below the center of vScore. 
+## STEP 32. Adding points 
+Add styles `"game-label"` and `"game-points"` for `lblPoints`. It should have a minimum length of 100, 
+and center alignment. Add it to the board.  
+
 ### SOLUTION CODE 
-createScore(){
+* *Class*: `Board`
+* *Method*: `createScore`
+* [preview][32]
+* Copy and paste the following code snippet:
+```java
 lblPoints.getStyleClass().addAll("game-label","game-points");
 lblPoints.setAlignment(Pos.CENTER);
 lblPoints.setMinWidth(100);
 getChildren().add(lblPoints);
-}
+```
+
 Back to [Index][I0]
 ***
-## STEP 33 
-In Board.createScore, bind lblPoints  to gameMovePoints with a “+” prefix, if points>0, and 
-bind the lblScore text property with the gameScore property. 
-In Board.addPoints, add the points to gameMove and gameScore property. 
-In GameManager.move, reset the points before traverseGrid, and add the points for every 
-merged cell 
-### SOLUTION CODE 
-createScore(){
+## STEP 33. Counting points  
+Bind `lblPoints` text property to `gameMovePoints` with a "+" prefix, when points>0. 
+Bind `lblScore` text property with `gameScoreProperty`. 
+
+#### SOLUTION CODE 
+* *Class*: `Board`
+* *Method*: `createScore`
+* [preview][33.1]
+* Copy and paste the following code snippet:
+```java
 lblPoints.textProperty().bind(Bindings.createStringBinding(()->
-(gameMovePoints.get()>0)?"+".concat(Integer.toString(gameMovePoints.get()
-)):"", gameMovePoints.asObject()));
+        (gameMovePoints.get()>0)?"+".concat(Integer.toString(gameMovePoints.get())):"", 
+        gameMovePoints.asObject()));
 lblScore.textProperty().bind(gameScoreProperty.asString());
-}
-addPoints(){
+```
+
+Add the points to `gameMovePoints` and to `gameScoreProperty`. 
+
+#### SOLUTION CODE 
+* *Class*: `Board`
+* *Method*: `addPoints`
+* [preview][33.2]
+* Copy and paste the following code snippet:
+```java
 gameMovePoints.set(gameMovePoints.get() + points);
 gameScoreProperty.set(gameScoreProperty.get() + points);
-}
-move(){
+```
+
+Reset the points before traversing the grid 
+
+#### SOLUTION CODE 
+* *Class*: `GameManager`
+* *Method*: `move`
+* [preview][33.3]
+* Copy and paste the following code snippet:
+```java
 board.setPoints(0);
-}move(){
+```
+
+Add the points for every merged cell during any movement
+
+#### SOLUTION CODE 
+* *Class*: `GameManager`
+* *Method*: `move`
+* [preview][33.4]
+* Copy and paste the following code snippet:
+```java
 board.addPoints(tileToBeMerged.getValue());
-}
+```
+
 Back to [Index][I0]
 ***
-## STEP 34 
-In Board.createScore, add a listener to lblPoints text changes, so it gets centered right below 
-the center of vScore. 
+## STEP 34. Centering the points 
+Add a listener to changes in `lblPoints` text property, so it gets centered right below 
+the center of `vScore`
+ 
 ### SOLUTION CODE 
-createScore(){
-lblPoints.textProperty().addListener((ov,s,s1)->{
-lblPoints.setLayoutX(0);
-double midScoreX=vScore.localToScene(vScore.getWidth()/2d,0).getX();
-lblPoints.setLayoutX(lblPoints.sceneToLocal(midScoreX, 0).getX()-
-lblPoints.getWidth()/2d);
+* *Class*: `Board`
+* *Method*: `createScore`
+* [preview][34]
+* Copy and paste the following code snippet:
+```java
+lblScore.textProperty().addListener((ov,s,s1)->{
+    lblPoints.setLayoutX(0);
+    double midScoreX=vScore.localToScene(vScore.getWidth()/2d,0).getX();
+    lblPoints.setLayoutX(lblPoints.sceneToLocal(midScoreX, 0).getX()-lblPoints.getWidth()/2d);
 });
-}
+```
+
 Back to [Index][I0]
 ***
 ## STEP 35 
@@ -1341,6 +1380,11 @@ Back to [Index][I0]
 [29]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L215-240
 [30]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L303-305
 [31]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L214-215
+[32]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L125-128
+[33.1]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L134-137
+[33.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L258-259
+[33.3]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L205
+[33.4]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L227
 
 [screen5]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step5.jpg
 [screen9]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step9.jpg
