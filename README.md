@@ -1388,7 +1388,7 @@ Back to [Index][I0]
 [33.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L258-259
 [33.3]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L205
 [33.4]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L227
-[33.4]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L142-146
+[34]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L142-146
 
 [screen5]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step5.jpg
 [screen9]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step9.jpg
