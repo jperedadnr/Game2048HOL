@@ -68,6 +68,7 @@ Now follow these steps
 ##### 27. [Let's start merging tiles][I27]
 ##### 28. [Animating the merged tiles][I28]
 ##### 29. [Performing tiles merging on the move][I29]
+##### 30. [Cleaning merged tiles][I30]
 
 ***
 
@@ -986,7 +987,12 @@ mergedToBeRemoved.clear();
 gameGrid.values().stream().filter(Objects::nonNull).forEach(t->t.setMerged(false));
 ```
 
-Screenshot after #30 
+### Screenshot after #30
+Run the project to see the application after completing the first 30 steps. 
+Press the arrows in any directions, check the tiles are moving smoothly to the farthest position 
+in the grid, merging with they neighbours if they can, while after each movement a new tile appears
+![Game2048 after 30 steps][screen30]
+
 Back to [Index][I0]
 ***
 ## STEP 31 
@@ -1334,6 +1340,7 @@ Back to [Index][I0]
 [screen14]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step14.jpg
 [screen20]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step20.jpg
 [screen23]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step23.jpg
+[screen30]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step30.jpg
 
 [I0]: https://github.com/jperedadnr/Game2048HOL#index
 [I1]: https://github.com/jperedadnr/Game2048HOL#step-1-add-gamemanager-into-game2048
@@ -1365,3 +1372,4 @@ Back to [Index][I0]
 [I27]: https://github.com/jperedadnr/Game2048HOL#step-27-lets-start-merging-tiles
 [I28]: https://github.com/jperedadnr/Game2048HOL#step-28-animating-the-merged-tiles
 [I29]: https://github.com/jperedadnr/Game2048HOL#step-29-performing-tiles-merging-on-the-move
+[I30]: https://github.com/jperedadnr/Game2048HOL#step-30-cleaning-merged-tiles
