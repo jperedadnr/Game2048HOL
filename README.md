@@ -1191,26 +1191,37 @@ Stream.of(Direction.UP, Direction.LEFT).parallel().forEach(direction -> {
 
 Back to [Index][I0]
 ***
-## STEP 37 
-In GameManager.move.setOnFinished, call mergeMovementsAvailable if 
-randomAvailableLocation == null and print Game Over, else try to add a new tile if tiles were 
-moved 
-In GameManager.addAndAnimateRandomTile, after last movement on full grid, check if there 
-are movements available  
-### SOLUTION CODE 
-setOnFinished(){
+## STEP 37. Checking for Game Over 
+When the animation have finished, and `randomAvailableLocation` is null, call `mergeMovementsAvailable` and 
+if this returns 0 then print "Game Over" 
+
+#### SOLUTION CODE 
+* *Class*: `GameManager`
+* *Method*: `move`
+* [preview][37.1]
+* Copy and paste the following code snippet:
+```java
 if(mergeMovementsAvailable()==0){
-System.out.println("Game Over");
-};
+    System.out.println("Game Over");
 }
-addAndAnimateRandomTile(){
+```
+
+After the last movement, when the grid is full of tiles, check if there are movements available. In case there
+are no mergeable tiles, print "Game Over"
+
+#### SOLUTION CODE 
+* *Class*: `GameManager`
+* *Method*: `addAndAnimateRandomTile`
+* [preview][37.2]
+* Copy and paste the following code snippet:
+```java
 scaleTransition.setOnFinished(e -> {
-if (gameGrid.values().parallelStream().noneMatch(Objects::isNull) &&
-mergeMovementsAvailable()==0 ) {
-System.out.println("Game Over");
-}
+    if (gameGrid.values().parallelStream().noneMatch(Objects::isNull) && mergeMovementsAvailable()==0 ) {
+        System.out.println("Game Over");
+    }
 });
-}
+```
+
 Back to [Index][I0]
 ***
 ## STEP 38 
@@ -1430,6 +1441,8 @@ Back to [Index][I0]
 [35.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L266
 [35.3]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L291
 [36]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L485-508
+[37.1]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L326-331
+[37.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L433-441
 
 [screen5]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step5.jpg
 [screen9]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step9.jpg
