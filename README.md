@@ -63,6 +63,7 @@ Now follow these steps
 ##### 22. [Adding and animating new tiles][I22]
 ##### 23. [Playing with new cells on the board][I23]
 ##### 24. [Introducing the GridOperator][I24]
+##### 25. [Traversing the grid properly][I25]
 
 ***
 
@@ -1303,3 +1304,4 @@ Back to [Index][I0]
 [I22]: https://github.com/jperedadnr/Game2048HOL#step-22-adding-and-animating-new-tiles
 [I23]: https://github.com/jperedadnr/Game2048HOL#step-23-playing-with-new-cells-on-the-board
 [I24]: https://github.com/jperedadnr/Game2048HOL#step-24-introducing-the-gridoperator
+[I25]: https://github.com/jperedadnr/Game2048HOL#step-25-traversing-the-grid-properly
