@@ -73,6 +73,7 @@ Now follow these steps
 ##### 32. [Adding points][I32]
 ##### 33. [Counting points][I33]
 ##### 34. [Centering the points][I34]
+##### 35. [Animating the points earned][I35]
 
 ***
 
@@ -1426,6 +1427,7 @@ Back to [Index][I0]
 [screen20]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step20.jpg
 [screen23]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step23.jpg
 [screen30]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step30.jpg
+[screen35]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step35.jpg
 
 [I0]: https://github.com/jperedadnr/Game2048HOL#index
 [I1]: https://github.com/jperedadnr/Game2048HOL#step-1-add-gamemanager-into-game2048
@@ -1462,3 +1464,4 @@ Back to [Index][I0]
 [I32]: https://github.com/jperedadnr/Game2048HOL#step-32-adding-points
 [I33]: https://github.com/jperedadnr/Game2048HOL#step-33-counting-points
 [I34]: https://github.com/jperedadnr/Game2048HOL#step-34-centering-the-points
+[I35]: https://github.com/jperedadnr/Game2048HOL#step-35-animating-the-points-earned
