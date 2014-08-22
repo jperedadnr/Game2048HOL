@@ -75,6 +75,7 @@ Now follow these steps
 ##### 34. [Centering the points][I34]
 ##### 35. [Animating the points earned][I35]
 ##### 36. [Looking for pairs of mergeable tiles][I36]
+##### 37. [Checking for Game Over][I37]
 
 ***
 
@@ -1490,3 +1491,4 @@ Back to [Index][I0]
 [I34]: https://github.com/jperedadnr/Game2048HOL#step-34-centering-the-points
 [I35]: https://github.com/jperedadnr/Game2048HOL#step-35-animating-the-points-earned
 [I36]: https://github.com/jperedadnr/Game2048HOL#step-36-looking-for-pairs-of-mergeable-tiles
+[I37]: https://github.com/jperedadnr/Game2048HOL#step-37-checking-for-game-over
