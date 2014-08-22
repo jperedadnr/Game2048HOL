@@ -76,6 +76,7 @@ Now follow these steps
 ##### 35. [Animating the points earned][I35]
 ##### 36. [Looking for pairs of mergeable tiles][I36]
 ##### 37. [Checking for Game Over][I37]
+##### 38. [Checking for the winning tile][I38]
 
 ***
 
@@ -1450,6 +1451,7 @@ Back to [Index][I0]
 [36]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L485-508
 [37.1]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L326-331
 [37.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L433-441
+[38]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L231-237
 
 [screen5]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step5.jpg
 [screen9]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step9.jpg
@@ -1498,3 +1500,4 @@ Back to [Index][I0]
 [I35]: https://github.com/jperedadnr/Game2048HOL#step-35-animating-the-points-earned
 [I36]: https://github.com/jperedadnr/Game2048HOL#step-36-looking-for-pairs-of-mergeable-tiles
 [I37]: https://github.com/jperedadnr/Game2048HOL#step-37-checking-for-game-over
+[I38]: https://github.com/jperedadnr/Game2048HOL#step-38-checking-for-the-winning-tile
