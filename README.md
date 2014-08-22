@@ -66,6 +66,7 @@ Now follow these steps
 ##### 25. [Traversing the grid properly][I25]
 ##### 26. [Sorting lists before moving tiles][I26]
 ##### 27. [Let's start merging tiles][I27]
+##### 28. [Animating the merged tiles][I28]
 
 ***
 
@@ -934,29 +935,39 @@ return new SequentialTransition(scale0, scale1);
 
 Back to [Index][I0]
 ***
-## STEP 29 
-In GameManager.move method, get tile for an offset, check if it's a valid tile, not merged, and 
-check if tiles can be merged. Then merge  this new tile with the old one, move to front the new 
-tile, put the nextLocation on the map, with the new tile and replace last location with null. Add 
-old tile to animateExistingTile, and new one to animateMerdedTile. Add old tile to 
-mergedToBeRemoved, and return 1. 
+## STEP 29. Performing tiles merging on the move 
+- Apply an offset in the specified direction to the tile
+- Check if this new tile is a valid tile
+- Check if the tile is not null, it is not merged and if both tiles can be merged. 
+- Then:
+  - Merge both tiles
+  - Move to front the new one
+  - Put the new location in `gameGrid`, with the new tile 
+  - Replace last location with null in the map 
+  - Add the old tile to `animateExistingTile`, and the new one to `animateMerdedTile`. 
+  - Add old tile to `mergedToBeRemoved`
+  - Return 1
+
 ### SOLUTION CODE 
-move(){
+* *Class*: `GameManager`
+* *Method*: `move`
+* [preview][29]
+* Copy and paste the following code snippet:
+```java
 Location nextLocation = newLoc.offset(direction);
-Tile tileToBeMerged = nextLocation.isValidFor() ? gameGrid.get(nextLocation) :
-null;
-if (tileToBeMerged != null && !tileToBeMerged.isMerged() &&
-t.isMergeable(tileToBeMerged)) {
-tileToBeMerged.merge(t);tileToBeMerged.toFront();
-gameGrid.put(nextLocation, tileToBeMerged);
-gameGrid.replace(t.getLocation(), null);
-parallelTransition.getChildren().add(animateExistingTile(t,
-nextLocation));
-parallelTransition.getChildren().add(animateMergedTile(tileToBeMerged));
-mergedToBeRemoved.add(t);
-return 1;
+Tile tileToBeMerged = nextLocation.isValidFor() ? gameGrid.get(nextLocation) : null;
+if (tileToBeMerged != null && !tileToBeMerged.isMerged() && t.isMergeable(tileToBeMerged)) {
+    tileToBeMerged.merge(t);
+    tileToBeMerged.toFront();
+    gameGrid.put(nextLocation, tileToBeMerged);
+    gameGrid.replace(t.getLocation(), null);
+    parallelTransition.getChildren().add(animateExistingTile(t, nextLocation));
+    parallelTransition.getChildren().add(animateMergedTile(tileToBeMerged));
+    mergedToBeRemoved.add(t);
+    return 1;
 }
-}
+```
+
 Back to [Index][I0]
 ***
 ## STEP 30 
@@ -1346,3 +1357,4 @@ Back to [Index][I0]
 [I25]: https://github.com/jperedadnr/Game2048HOL#step-25-traversing-the-grid-properly
 [I26]: https://github.com/jperedadnr/Game2048HOL#step-26-sorting-lists-before-moving-tiles
 [I27]: https://github.com/jperedadnr/Game2048HOL#step-27-lets-start-merging-tiles
+[I28]: https://github.com/jperedadnr/Game2048HOL#step-28-animating-the-merged-tiles
