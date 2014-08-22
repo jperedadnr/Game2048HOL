@@ -880,20 +880,34 @@ GridOperator.sortGrid(direction);
 
 Back to [Index][I0]
 ***
-## STEP 27 
-In Tile. merge method, add to tile’s value the value of the tile to be merged to, set the text of 
-the label with the new value and replace the old style ‘game‐title‐“‐value with the new one. In 
-Tile.isMergeable Check it this.tile can be merged with anotherTile 
-### SOLUTION CODE 
-merge(){getStyleClass().remove("game-tile-" + value);
+## STEP 27. Let's start merging tiles
+Add to tile's value the one of the tile to be merged to, set the text of 
+the label with the new value, set the tile as merged and replace the old style `"game-title-"+value` with the new one. 
+
+#### SOLUTION CODE 
+* *Class*: `Tile`
+* *Method*: `merge`
+* [preview][27.1]
+* Copy and paste the following code snippet:
+```java
+getStyleClass().remove("game-tile-" + value);
 this.value += another.getValue();
 setText(Integer.toString(value));
 merged = true;
 getStyleClass().add("game-tile-" + value);
-}
-isMergeable(){
+```
+
+Check it the tile can be merged with another tile by comparing their values
+
+#### SOLUTION CODE 
+* *Class*: `Tile`
+* *Method*: `isMergeable`
+* [preview][27.2]
+* Copy and paste the following code snippet:
+```java
 return anotherTile != null && getValue()==anotherTile.getValue();
-}
+```
+
 Back to [Index][I0]
 ***
 ## STEP 28 
@@ -1286,6 +1300,8 @@ Back to [Index][I0]
 [25.4]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L193-196
 [26.1]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GridOperator.java#L38-39
 [26.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L201
+[27.1]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GridOperator.java#L23-87
+[27.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L94
 
 [screen5]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step5.jpg
 [screen9]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step9.jpg
