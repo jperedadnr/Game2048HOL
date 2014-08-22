@@ -64,6 +64,7 @@ Now follow these steps
 ##### 23. [Playing with new cells on the board][I23]
 ##### 24. [Introducing the GridOperator][I24]
 ##### 25. [Traversing the grid properly][I25]
+##### 26. [Sorting lists before moving tiles][I26]
 
 ***
 
@@ -869,8 +870,8 @@ Collections.sort(traversalY, direction.equals(Direction.DOWN)? Collections.rever
 Call `sortGrid` before traverse the grid when tiles are moved 
 
 #### SOLUTION CODE 
-* *Class*: `GridOperator`
-* *Method*: `sortGrid`
+* *Class*: `GameManager`
+* *Method*: `move`
 * [preview][26.2]
 * Copy and paste the following code snippet:
 ```java
@@ -1319,3 +1320,4 @@ Back to [Index][I0]
 [I23]: https://github.com/jperedadnr/Game2048HOL#step-23-playing-with-new-cells-on-the-board
 [I24]: https://github.com/jperedadnr/Game2048HOL#step-24-introducing-the-gridoperator
 [I25]: https://github.com/jperedadnr/Game2048HOL#step-25-traversing-the-grid-properly
+[I26]: https://github.com/jperedadnr/Game2048HOL#step-26-sorting-lists-before-moving-tiles
