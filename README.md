@@ -845,26 +845,38 @@ Replace the double for loop with the `traverseGrid` method to create the cells
 * Copy and paste the following code snippet:
 ```java
 GridOperator.traverseGrid((i, j) -> {
-gridGroup.getChildren().add(createCell(i, j));
-return 0;
+    gridGroup.getChildren().add(createCell(i, j));
+    return 0;
 });
 ```
 
 Back to [Index][I0]
 ***
-## STEP 26 
-In GridOperator, sort the traverse X,Y list, so for Right or Down directions traverseX,Y are taken 
-in reverse order. In move, first of all call sortGrid before traverseGrid. 
-### SOLUTION CODE 
-sortGrid(){
-Collections.sort(traversalX, direction.equals(Direction.RIGHT) ?
-Collections.reverseOrder() : Integer::compareTo);
-Collections.sort(traversalY, direction.equals(Direction.DOWN)?
-Collections.reverseOrder() : Integer::compareTo);
-}
-move(){
+## STEP 26. Sorting lists before moving tiles 
+Sort the `traversalX` and `traversalY` lists, so for right or down directions these are taken 
+in reverse order. This will solve the problem stated in [Step 18][I18]
+
+#### SOLUTION CODE 
+* *Class*: `GridOperator`
+* *Method*: `sortGrid`
+* [preview][26.1]
+* Copy and paste the following code snippet:
+```java
+Collections.sort(traversalX, direction.equals(Direction.RIGHT) ? Collections.reverseOrder() : Integer::compareTo);
+Collections.sort(traversalY, direction.equals(Direction.DOWN)? Collections.reverseOrder() : Integer::compareTo);
+```
+
+Call `sortGrid` before traverse the grid when tiles are moved 
+
+#### SOLUTION CODE 
+* *Class*: `GridOperator`
+* *Method*: `sortGrid`
+* [preview][26.2]
+* Copy and paste the following code snippet:
+```java
 GridOperator.sortGrid(direction);
-}
+```
+
 Back to [Index][I0]
 ***
 ## STEP 27 
@@ -1271,6 +1283,8 @@ Back to [Index][I0]
 [25.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L208-251
 [25.3]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L316-318
 [25.4]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L193-196
+[26.1]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GridOperator.java#L38-39
+[26.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L201
 
 [screen5]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step5.jpg
 [screen9]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step9.jpg
