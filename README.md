@@ -70,6 +70,9 @@ Now follow these steps
 ##### 29. [Performing tiles merging on the move][I29]
 ##### 30. [Cleaning merged tiles][I30]
 ##### 31. [Fixing undesired effects][I31]
+##### 32. [Adding points][I32]
+##### 33. [Counting points][I33]
+##### 34. [Centering the points][I34]
 
 ***
 
@@ -1385,6 +1388,7 @@ Back to [Index][I0]
 [33.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L258-259
 [33.3]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L205
 [33.4]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L227
+[33.4]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L142-146
 
 [screen5]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step5.jpg
 [screen9]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step9.jpg
@@ -1426,3 +1430,6 @@ Back to [Index][I0]
 [I29]: https://github.com/jperedadnr/Game2048HOL#step-29-performing-tiles-merging-on-the-move
 [I30]: https://github.com/jperedadnr/Game2048HOL#step-30-cleaning-merged-tiles
 [I31]: https://github.com/jperedadnr/Game2048HOL#step-31-fixing-undesired-effects
+[I32]: https://github.com/jperedadnr/Game2048HOL#step-32-adding-points
+[I33]: https://github.com/jperedadnr/Game2048HOL#step-33-counting-points
+[I34]: https://github.com/jperedadnr/Game2048HOL#step-34-centering-the-points
