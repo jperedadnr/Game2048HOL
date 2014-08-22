@@ -1225,14 +1225,20 @@ scaleTransition.setOnFinished(e -> {
 
 Back to [Index][I0]
 ***
-## STEP 38 
-In GameManager.move, check if the merged tile is 2048, and print win.  
+## STEP 38. Checking for the winning tile 
+While traversing the grid, check if the merged tile is 2048, and print "You Win!"  
+
 ### SOLUTION CODE 
-move(){
+* *Class*: `GameManager`
+* *Method*: `move`
+* [preview][38]
+* Copy and paste the following code snippet:
+```java
 if(tileToBeMerged.getValue()==2048){
-System.out.println("You win!");
+    System.out.println("You win!");
 }
-}
+```
+
 Back to [Index][I0]
 ***
 ## STEP 39 
