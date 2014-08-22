@@ -67,6 +67,7 @@ Now follow these steps
 ##### 26. [Sorting lists before moving tiles][I26]
 ##### 27. [Let's start merging tiles][I27]
 ##### 28. [Animating the merged tiles][I28]
+##### 29. [Performing tiles merging on the move][I29]
 
 ***
 
@@ -1358,3 +1359,4 @@ Back to [Index][I0]
 [I26]: https://github.com/jperedadnr/Game2048HOL#step-26-sorting-lists-before-moving-tiles
 [I27]: https://github.com/jperedadnr/Game2048HOL#step-27-lets-start-merging-tiles
 [I28]: https://github.com/jperedadnr/Game2048HOL#step-28-animating-the-merged-tiles
+[I29]: https://github.com/jperedadnr/Game2048HOL#step-29-performing-tiles-merging-on-the-move
