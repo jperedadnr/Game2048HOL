@@ -995,14 +995,20 @@ in the grid, merging with they neighbours if they can, while after each movement
 
 Back to [Index][I0]
 ***
-## STEP 31 
-In Board.createGrid, to avoid dropshadow effect of higher tiles move the grid, add a rectangle 
-to clip hBottom. 
+## STEP 31. Fixing undesired effects 
+To avoid dropshadow effects on tiles with values 128+ move the grid on the scene, add a rectangle 
+to clip `hBottom`
+ 
 ### SOLUTION CODE 
-createGrid(){
+* *Class*: `Board`
+* *Method*: `createGrid`
+* [preview][31]
+* Copy and paste the following code snippet:
+```java
 Rectangle rect = new Rectangle(GRID_WIDTH, GRID_WIDTH);
 hBottom.setClip(rect);
-}
+```
+
 Back to [Index][I0]
 ***
 ## STEP 32 
@@ -1333,6 +1339,7 @@ Back to [Index][I0]
 [28]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L457-467
 [29]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L215-240
 [30]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L303-305
+[31]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L214-215
 
 [screen5]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step5.jpg
 [screen9]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step9.jpg
