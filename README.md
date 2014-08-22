@@ -779,53 +779,76 @@ traversalX.forEach(x -> {
 
 Back to [Index][I0]
 ***
-## STEP 25 
-In GameManager. initializeGameGrid method, replace the double for with the traverseGrid 
-method. 
-In GameManager.move method, replace the IntStreams with the traverseGrid method. Assign 
-to  tilesWereMoved  to account for the tiles moved.  
-In GameManager.move.setOnFinished, before adding a tile, check there were some 
-movements done. 
-In Board.createGrid, replace the double for with the traverseGrid 
-### SOLUTION CODE 
-initializeGameGrid(){
+## STEP 25. Traversing the grid properly 
+Replace the double for loop with the `traverseGrid` method
+
+#### SOLUTION CODE 
+* *Class*: `GameManager`
+* *Method*: `initializeGameGrid`
+* [preview][25.1]
+* Copy and paste the following code snippet:
+```java
 GridOperator.traverseGrid((i, j) -> {
-Location location = new Location(i,j);
-locations.add(location);
-gameGrid.put(location, null);
-return 0;
+    Location location = new Location(i,j);
+    locations.add(location);
+    gameGrid.put(location, null);
+    return 0;
 });
-}
-move(){
+```
+
+Replace the `IntStreams` from [Step 18][I18] with the `traverseGrid` method. 
+Assign the returned value to `tilesWereMoved` to account for the number of tiles moved
+
+#### SOLUTION CODE 
+* *Class*: `GameManager`
+* *Method*: `move`
+* [preview][25.2]
+* Copy and paste the following code snippet:
+```java
 tilesWereMoved = GridOperator.traverseGrid((i,j)->{
-Tile t=gameGrid.get(new Location(i,j));
-if(t!=null){
-final Location
-newLoc=findFarthestLocation(t.getLocation(),direction);
-if(!newLoc.equals(t.getLocation())){
-parallelTransition.getChildren().add(animateExistingTile(t,
-newLoc));
-gameGrid.put(newLoc, t);
-gameGrid.replace(t.getLocation(),null);t.setLocation(newLoc);
-return 1;
-}
-}
-return 0;
+    Tile t=gameGrid.get(new Location(i,j));
+    if(t!=null){
+        final Location newLoc=findFarthestLocation(t.getLocation(),direction);
+        if(!newLoc.equals(t.getLocation())){
+            parallelTransition.getChildren().add(animateExistingTile(t, newLoc));
+            gameGrid.put(newLoc, t);
+            gameGrid.replace(t.getLocation(),null);
+            t.setLocation(newLoc);
+            return 1;
+        }
+    }
+    return 0;
 });
-}
-move(){
-setOnFinished(){
+```
+
+When the animations have finished, before adding a tile, check if there were some 
+movements done
+
+#### SOLUTION CODE 
+* *Class*: `GameManager`
+* *Method*: `move`
+* [preview][25.3]
+* Copy and paste the following code snippet:
+```java
 if(tilesWereMoved>0){
-addAndAnimateRandomTile(randomAvailableLocation);
+    addAndAnimateRandomTile(randomAvailableLocation);
 }
-}
-}
-createGrid(){
+```
+
+Replace the double for loop with the `traverseGrid` method to create the cells
+
+#### SOLUTION CODE 
+* *Class*: `Board`
+* *Method*: `createGrid`
+* [preview][25.4]
+* Copy and paste the following code snippet:
+```java
 GridOperator.traverseGrid((i, j) -> {
 gridGroup.getChildren().add(createCell(i, j));
 return 0;
 });
-}
+```
+
 Back to [Index][I0]
 ***
 ## STEP 26 
@@ -1243,6 +1266,10 @@ Back to [Index][I0]
 [22]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L420-443
 [23]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L310-323
 [24]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GridOperator.java#L25-29
+[25.1]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L91-96
+[25.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L208-251
+[25.3]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L316-318
+[25.4]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L193-196
 
 [screen5]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step5.jpg
 [screen9]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step9.jpg
