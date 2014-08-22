@@ -1104,13 +1104,16 @@ lblScore.textProperty().addListener((ov,s,s1)->{
 
 Back to [Index][I0]
 ***
-## STEP 35 
-In Board.createScore, create the timeline to translate the lblPoints in Y from 20 to 100 and 
+## STEP 35. Animating the points earned
+Create the timeline to translate `lblPoints` in Y from 20 to 100 and 
 reduce its opacity from 1 to 0 in 600 ms. 
-In Board.animateScore, start the animation. 
-In GameManager.move call board.animateScore after traverseGrid. 
-### SOLUTION CODE 
-createScore(){
+
+#### SOLUTION CODE 
+* *Class*: `Board`
+* *Method*: `createScore`
+* [preview][35.1]
+* Copy and paste the following code snippet:
+```java
 final KeyValue kvO0 = new KeyValue(lblPoints.opacityProperty(), 1);
 final KeyValue kvY0 = new KeyValue(lblPoints.layoutYProperty(), 20);
 final KeyValue kvO1 = new KeyValue(lblPoints.opacityProperty(), 0);
@@ -1121,13 +1124,36 @@ Duration animationDuration = Duration.millis(600);
 final KeyFrame kfO1 = new KeyFrame(animationDuration, kvO1);
 final KeyFrame kfY1 = new KeyFrame(animationDuration, kvY1);
 animateAddedPoints.getKeyFrames().addAll(kfO0,kfY0,kfO1,kfY1);
-}
-animateScore(){
+```
+
+Start the animation 
+
+#### SOLUTION CODE 
+* *Class*: `Board`
+* *Method*: `animateScore`
+* [preview][35.2]
+* Copy and paste the following code snippet:
+```java
 animateAddedPoints.playFromStart();
-}move(){
+```
+
+Call `board.animateScore` after traversing the grid
+
+### SOLUTION CODE 
+* *Class*: `GameManager`
+* *Method*: `move`
+* [preview][35.3]
+* Copy and paste the following code snippet:
+```java
 board.animateScore();
-}
-Screenshot after #35 
+```
+
+### Screenshot after #35
+Run the project to see the application after completing the first 35 steps. 
+Press the arrows in any directions, check the tiles are moving smoothly to the farthest position 
+in the grid, merging with they neighbours if they can, while the points of every play are shown
+below the score, and the total score is increasing
+![Game2048 after 35 steps][screen35]
  
 Back to [Index][I0]
 ***
@@ -1389,6 +1415,9 @@ Back to [Index][I0]
 [33.3]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L205
 [33.4]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L227
 [34]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L142-146
+[35.1]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L151-162
+[35.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L266
+[35.3]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L291
 
 [screen5]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step5.jpg
 [screen9]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step9.jpg
