@@ -65,6 +65,7 @@ Now follow these steps
 ##### 24. [Introducing the GridOperator][I24]
 ##### 25. [Traversing the grid properly][I25]
 ##### 26. [Sorting lists before moving tiles][I26]
+##### 27. [Let's start merging tiles][I27]
 
 ***
 
@@ -1337,3 +1338,4 @@ Back to [Index][I0]
 [I24]: https://github.com/jperedadnr/Game2048HOL#step-24-introducing-the-gridoperator
 [I25]: https://github.com/jperedadnr/Game2048HOL#step-25-traversing-the-grid-properly
 [I26]: https://github.com/jperedadnr/Game2048HOL#step-26-sorting-lists-before-moving-tiles
+[I27]: https://github.com/jperedadnr/Game2048HOL#step-27-lets-start-merging-tiles
