@@ -69,6 +69,7 @@ Now follow these steps
 ##### 28. [Animating the merged tiles][I28]
 ##### 29. [Performing tiles merging on the move][I29]
 ##### 30. [Cleaning merged tiles][I30]
+##### 31. [Fixing undesired effects][I31]
 
 ***
 
@@ -996,7 +997,7 @@ in the grid, merging with they neighbours if they can, while after each movement
 Back to [Index][I0]
 ***
 ## STEP 31. Fixing undesired effects 
-To avoid dropshadow effects on tiles with values 128+ move the grid on the scene, add a rectangle 
+Dropshadow effects on tiles with values 128+ can displace the grid on the scene. To avoid it, add a rectangle 
 to clip `hBottom`
  
 ### SOLUTION CODE 
@@ -1380,3 +1381,4 @@ Back to [Index][I0]
 [I28]: https://github.com/jperedadnr/Game2048HOL#step-28-animating-the-merged-tiles
 [I29]: https://github.com/jperedadnr/Game2048HOL#step-29-performing-tiles-merging-on-the-move
 [I30]: https://github.com/jperedadnr/Game2048HOL#step-30-cleaning-merged-tiles
+[I31]: https://github.com/jperedadnr/Game2048HOL#step-31-fixing-undesired-effects
