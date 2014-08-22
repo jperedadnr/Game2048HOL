@@ -1140,7 +1140,7 @@ animateAddedPoints.playFromStart();
 
 Call `board.animateScore` after traversing the grid
 
-### SOLUTION CODE 
+#### SOLUTION CODE 
 * *Class*: `GameManager`
 * *Method*: `move`
 * [preview][35.3]
@@ -1154,31 +1154,40 @@ Run the project to see the application after completing the first 35 steps.
 Press the arrows in any directions, check the tiles are moving smoothly to the farthest position 
 in the grid, merging with they neighbours if they can, while the points of every play are shown
 below the score, and the total score is increasing
+
 ![Game2048 after 35 steps][screen35]
  
 Back to [Index][I0]
 ***
-## STEP 36 
-In GameManager.mergeMovementsAvailable, traverse the grid in two directions (Up, Left) and 
-for every tile look if the offset tile is mergeable. 
+## STEP 36. Looking for pairs of mergeable tiles 
+Traverse the grid in two directions (up and left, in parallel) and for every tile 
+look if in the next location given by an offset in the specified direction, there is a valid
+tile mergeable with the former. Increase the account of `numMergeableTile`
+
 ### SOLUTION CODE 
-mergeMovementsAvailable(){
+* *Class*: `GameManager`
+* *Method*: `mergeMovementsAvailable`
+* [preview][36]
+* Copy and paste the following code snippet:
+```java
 Stream.of(Direction.UP, Direction.LEFT).parallel().forEach(direction -> {
-GridOperator.traverseGrid((x, y) -> {
-Location thisloc = new Location(x, y);
-Tile t1=gameGrid.get(thisloc);
-if(t1!=null){
-Location nextLoc=thisloc.offset(direction);
-if(nextLoc.isValidFor()){
-Tile t2=gameGrid.get(nextLoc);
-if(t2!=null && t1.isMergeable(t2)){
-numMergeableTile.incrementAndGet();
-}
-}
-}
-return 0;});
+    GridOperator.traverseGrid((x, y) -> {
+        Location thisloc = new Location(x, y);
+        Tile t1=gameGrid.get(thisloc);
+        if(t1!=null){
+            Location nextLoc=thisloc.offset(direction);
+            if(nextLoc.isValidFor()){
+                Tile t2=gameGrid.get(nextLoc);
+                if(t2!=null && t1.isMergeable(t2)){
+                    numMergeableTile.incrementAndGet();
+                }
+            }
+        }
+        return 0;
+    });
 });
-}
+```
+
 Back to [Index][I0]
 ***
 ## STEP 37 
@@ -1419,6 +1428,7 @@ Back to [Index][I0]
 [35.1]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L151-162
 [35.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L266
 [35.3]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L291
+[36]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L485-508
 
 [screen5]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step5.jpg
 [screen9]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step9.jpg
