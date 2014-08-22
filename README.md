@@ -74,6 +74,7 @@ Now follow these steps
 ##### 33. [Counting points][I33]
 ##### 34. [Centering the points][I34]
 ##### 35. [Animating the points earned][I35]
+##### 36. [Looking for pairs of mergeable tiles][I36]
 
 ***
 
@@ -1475,3 +1476,4 @@ Back to [Index][I0]
 [I33]: https://github.com/jperedadnr/Game2048HOL#step-33-counting-points
 [I34]: https://github.com/jperedadnr/Game2048HOL#step-34-centering-the-points
 [I35]: https://github.com/jperedadnr/Game2048HOL#step-35-animating-the-points-earned
+[I36]: https://github.com/jperedadnr/Game2048HOL#step-36-looking-for-pairs-of-mergeable-tiles
