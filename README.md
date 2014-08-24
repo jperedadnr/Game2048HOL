@@ -1493,7 +1493,7 @@ tilesWereMoved = GridOperator.traverseGrid((i, j) -> {
 
 Back to [Index][I0]
 ***
- ## STEP 46. Extra features  
+## STEP 46. Extra features  
 To find more extra features like:
 - Time of play
 - Session saving and restoring
