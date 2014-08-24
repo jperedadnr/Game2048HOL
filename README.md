@@ -1285,7 +1285,7 @@ bContinue.setOnAction(e->getChildren().removeAll(overlay, buttonsOverlay));
 
 Back to [Index][I0]
 ***
-## STEP 40 
+## STEP 40. Setting up the Overlay 
 Add listeners to game over and game won properties. 
 - For game over: 
   - Set style to `"game-overlay"` and `"game-overlay-over"`
