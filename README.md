@@ -85,6 +85,7 @@ Now follow these steps
 ##### 38. [Checking for the winning tile][I38]
 <!-- Overlay -->
 ##### 39. [Setting options buttons][I39]
+##### 40. [Setting up the Overlay][I40]
 
 ***
 
@@ -1329,24 +1330,53 @@ gameWonProperty.addListener((observable, oldValue, newValue) -> {
 
 Back to [Index][I0]
 ***
-## STEP 41 
-In Board constructor call initGameProperties. In GameManager.move, add set win with setGameWin, and setGameOver in onFinished 
-In GameManager.addAndAnimateRandomTile, add setGameOver. 
-### SOLUTION CODE 
-Board(){
+## STEP 41. Listening to game won/over
+Call `initGameProperties`
+
+#### SOLUTION CODE 
+* *Class*: `Board`
+* *Method*: constructor
+* [preview][41.1]
+* Copy and paste the following code snippet:
+```java
 initGameProperties();
-}
-move(){
+```
+
+Set game won with `board.setGameWin` when the 2048 tile is found
+
+#### SOLUTION CODE 
+* *Class*: `GameManager`
+* *Method*: `move`
+* [preview][41.2]
+* Copy and paste the following code snippet:
+```java
 board.setGameWin(true);
-}
-move(){
-setOnFinished(){
+```
+
+After the animation has finished, set game over with `board.setGameOver` if the grid is full and there
+are no more mergeable tiles
+
+#### SOLUTION CODE 
+* *Class*: `GameManager`
+* *Method*: `move`
+* [preview][41.3]
+* Copy and paste the following code snippet:
+```java
 board.setGameOver(true);
-}
-}
-addAndAnimateRandomTile(){
+```
+
+After the scale animation of a tile, set game over with `board.setGameOver` if the grid is full and there
+are no more mergeable tiles 
+
+#### SOLUTION CODE 
+* *Class*: `GameManager`
+* *Method*: `addAndAnimateRandomTile`
+* [preview][41.4]
+* Copy and paste the following code snippet:
+```java
 board.setGameOver(true);
-}
+```
+
 Back to [Index][I0]
 ***
 ## STEP 42 
@@ -1495,6 +1525,10 @@ Back to [Index][I0]
 [38]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L231-237
 [39]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L285-296
 [40]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L301-319
+[41.1]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L70
+[41.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L235
+[41.3]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L330
+[41.4]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L438
 
 [screen5]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step5.jpg
 [screen9]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step9.jpg
@@ -1545,3 +1579,4 @@ Back to [Index][I0]
 [I37]: https://github.com/jperedadnr/Game2048HOL#step-37-checking-for-game-over
 [I38]: https://github.com/jperedadnr/Game2048HOL#step-38-checking-for-the-winning-tile
 [I39]: https://github.com/jperedadnr/Game2048HOL#step-39-setting-options-buttons
+[I40]: https://github.com/jperedadnr/Game2048HOL#step-40-setting-up-the-overlay
