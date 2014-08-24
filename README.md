@@ -206,6 +206,7 @@ createGrid();
 
 ### Screenshot after Step 5
 Run the project to see the application after completing the first 5 steps
+
 ![Game2048 after 5 steps][screen5]
 
 Back to [Index][I0]
@@ -305,6 +306,7 @@ startGame();
 ```
 ### Screenshot after #9 
 Run the project to see the application after completing the first 9 steps
+
 ![Game2048 after 9 steps][screen9]
  
 Back to [Index][I0]
@@ -397,6 +399,7 @@ getStyleClass().addAll("game-label", "game-tile-" + value);
 
 ### Screenshot after #10
 Run the project to see the application after completing the first 10 steps
+
 ![Game2048 after 10 steps][screen10]
  
 Back to [Index][I0]
@@ -481,6 +484,7 @@ scene.setOnKeyPressed(ke -> {
 ### Screenshot after #14 
 Run the project to see the application after completing the first 14 steps. 
 Press the right arrow and check the tile from [Screenshot #10][screen10] moves one cell to the right
+
 ![Game2048 after 14 steps][screen14]
 
 Back to [Index][I0]
@@ -694,6 +698,7 @@ parallelTransition.getChildren().clear();
 ### Screenshot after #20 
 Run the project to see the application after completing the first 20 steps. 
 Press an arrow and check the tiles are moving smoothly to the farthest position in the grid
+
 ![Game2048 after 20 steps][screen20]
 
 Back to [Index][I0]
@@ -770,6 +775,7 @@ if (randomAvailableLocation != null){
 Run the project to see the application after completing the first 23 steps. 
 Press the arrows in any directions, check the tiles are moving smoothly to the farthest position 
 in the grid, and after each movement a new tile appears
+
 ![Game2048 after 23 steps][screen23]
 
 Back to [Index][I0]
@@ -999,6 +1005,7 @@ gameGrid.values().stream().filter(Objects::nonNull).forEach(t->t.setMerged(false
 Run the project to see the application after completing the first 30 steps. 
 Press the arrows in any directions, check the tiles are moving smoothly to the farthest position 
 in the grid, merging with they neighbours if they can, while after each movement a new tile appears
+
 ![Game2048 after 30 steps][screen30]
 
 Back to [Index][I0]
@@ -1242,23 +1249,32 @@ if(tileToBeMerged.getValue()==2048){
 
 Back to [Index][I0]
 ***
-## STEP 39 
-In Board.initGameProperties, style buttons, set listeners to click. In both, remove overlay. In 
-bTry also remove tiles and reset all game properties.  
+## STEP 39. Setting options buttons
+- Style buttons `bTry` and `bContinue` with `"game-button"`
+- Add listeners to button onAction property. In both buttons remove `overlay` and `buttonsOverlay`. In 
+`bTry` also remove all tiles in `gridGroup`. Set `resetGame` to false and reset all game properties: 
+`gameScoreProperty`, `gameWonProperty` and gameOVerProperty`. Then set `resetGame` to true
+
 ### SOLUTION CODE 
-initGameProperties(){
+* *Class*: `Board`
+* *Method*: `initGameProperties`
+* [preview][39]
+* Copy and paste the following code snippet:
+```java
 bTry.getStyleClass().add("game-button");
-bTry.setOnAction(e->{getChildren().removeAll(overlay, buttonsOverlay);
-gridGroup.getChildren().removeIf(c->c instanceof Tile);
-resetGame.set(false);
-gameScoreProperty.set(0);
-gameWonProperty.set(false);
-gameOverProperty.set(false);
-resetGame.set(true);
+bTry.setOnAction(e->{
+    getChildren().removeAll(overlay, buttonsOverlay);
+    gridGroup.getChildren().removeIf(c->c instanceof Tile);
+    resetGame.set(false);
+    gameScoreProperty.set(0);
+    gameWonProperty.set(false);
+    gameOverProperty.set(false);
+    resetGame.set(true);
 });
 bContinue.getStyleClass().add("game-button");
 bContinue.setOnAction(e->getChildren().removeAll(overlay, buttonsOverlay));
-}
+```
+
 Back to [Index][I0]
 ***
 ## STEP 40 
@@ -1452,6 +1468,7 @@ Back to [Index][I0]
 [37.1]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L326-331
 [37.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L433-441
 [38]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L231-237
+[39]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L285-296
 
 [screen5]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step5.jpg
 [screen9]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step9.jpg
