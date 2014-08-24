@@ -1448,47 +1448,47 @@ optionalTile(thisloc).ifPresent(t1->{
 Back to [Index][I0]
 ***
 ## STEP 45 
-In GameManager.move, use optionalTile to traverse the grid, with an atomicInteger to return 
-the results 
+Use optionalTile to traverse the grid, with an `atomicInteger` to return the results 
+
 ### SOLUTION CODE 
-move (){
-GridOperator.sortGrid(direction);
-board.setPoints(0);
+* *Class*: `GameManager`
+* *Method*: `move`
+* [preview][45]
+* Copy and paste the following code snippet:
+```java
 tilesWereMoved = GridOperator.traverseGrid((i, j) -> {
-AtomicInteger result=new AtomicInteger();optionalTile(new Location(i,j)).ifPresent(t1->{
-final Location newLoc=findFarthestLocation(t1.getLocation(),
-direction);
-Location nextLocation = newLoc.offset(direction); // calculates to
-a possible merge
-optionalTile(nextLocation).filter(t2->t1.isMergeable(t2) &&
-!t2.isMerged()).ifPresent(t2->{
-t2.merge(t1);
-t2.toFront();
-gameGrid.put(nextLocation, t2);
-gameGrid.replace(t1.getLocation(), null);
-board.addPoints(t2.getValue());
-if(t2.getValue()==2048){
-board.setGameWin(true);
-}
-parallelTransition.getChildren().add(animateExistingTile(t1
-, nextLocation));
-parallelTransition.getChildren().add(animateMergedTile(t2))
-;
-mergedToBeRemoved.add(t1);
-result.set(1);
+    AtomicInteger result=new AtomicInteger();
+    optionalTile(new Location(i,j)).ifPresent(t1->{
+        final Location newLoc=findFarthestLocation(t1.getLocation(), direction);
+        Location nextLocation = newLoc.offset(direction);
+        optionalTile(nextLocation).filter(t2->t1.isMergeable(t2) && !t2.isMerged()).ifPresent(t2->{
+            t2.merge(t1);
+            t2.toFront();
+            gameGrid.put(nextLocation, t2);
+            gameGrid.replace(t1.getLocation(), null);
+            board.addPoints(t2.getValue());
+            if(t2.getValue()==2048){
+                board.setGameWin(true);
+            }
+            parallelTransition.getChildren().add(animateExistingTile(t1, nextLocation));
+            parallelTransition.getChildren().add(animateMergedTile(t2));
+            mergedToBeRemoved.add(t1);
+
+            result.set(1);
+        });
+
+        if(result.get()==0 && !newLoc.equals(t1.getLocation())){
+            parallelTransition.getChildren().add(animateExistingTile(t1, newLoc));
+            gameGrid.put(newLoc, t1);
+            gameGrid.replace(t1.getLocation(),null);
+            t1.setLocation(newLoc);
+            result.set(1);
+        } 
+    });
+    return result.get();
 });
-if(result.get()==0 && !newLoc.equals(t1.getLocation())){
-parallelTransition.getChildren().add(animateExistingTile(t1
-, newLoc));
-gameGrid.put(newLoc, t1);
-gameGrid.replace(t1.getLocation(),null);
-t1.setLocation(newLoc);
-result.set(1);
-}
-});
-return result.get();
-});
-}
+```
+
 Back to [Index][I0]
 ***
  
@@ -1564,6 +1564,7 @@ Back to [Index][I0]
 [42]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L55-60
 [43]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L523
 [44]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L501-504
+[45]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L255-285
 
 [screen5]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step5.jpg
 [screen9]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step9.jpg
