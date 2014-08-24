@@ -86,6 +86,7 @@ Now follow these steps
 <!-- Overlay -->
 ##### 39. [Setting options buttons][I39]
 ##### 40. [Setting up the Overlay][I40]
+##### 41. [Listening to game won/over][I41]
 
 ***
 
@@ -1379,18 +1380,24 @@ board.setGameOver(true);
 
 Back to [Index][I0]
 ***
-## STEP 42 
-In GameManager constructor add a listener to reset game property to start the game again 
-with a clear grid. 
+## STEP 42. Want to try again? 
+Add a listener to the `resetGameProperty`, so when the button `bTry` is clicked, the game can be 
+initiralized again with a clear grid, and started
+
 ### SOLUTION CODE 
-GameManager(){
+* *Class*: `GameManager`
+* *Method*: constructor
+* [preview][42]
+* Copy and paste the following code snippet:
+```java
 board.resetGameProperty().addListener((ov, b, b1) -> {
-if (b1) {
-initializeGameGrid();
-startGame();
-}
+    if (b1) {
+        initializeGameGrid();
+        startGame();
+    }
 });
-}
+```
+
 Screenshots after #42  
  
 Back to [Index][I0]
@@ -1529,6 +1536,7 @@ Back to [Index][I0]
 [41.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L235
 [41.3]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L330
 [41.4]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L438
+[42]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L438
 
 [screen5]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step5.jpg
 [screen9]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step9.jpg
@@ -1580,3 +1588,4 @@ Back to [Index][I0]
 [I38]: https://github.com/jperedadnr/Game2048HOL#step-38-checking-for-the-winning-tile
 [I39]: https://github.com/jperedadnr/Game2048HOL#step-39-setting-options-buttons
 [I40]: https://github.com/jperedadnr/Game2048HOL#step-40-setting-up-the-overlay
+[I41]: https://github.com/jperedadnr/Game2048HOL#step-41-listening-to-game-wonover
