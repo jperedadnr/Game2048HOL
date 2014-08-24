@@ -91,6 +91,7 @@ Now follow these steps
 <!-- Optional -->
 ##### 43. [Optional tiles][I43]
 ##### 44. [Finding mergeable (optionally null) tiles][I44]
+##### 45. [Traversing the grid with Optional][I45]
 
 ***
 
@@ -1622,3 +1623,4 @@ Back to [Index][I0]
 [I42]: https://github.com/jperedadnr/Game2048HOL#step-42-want-to-try-again
 [I43]: https://github.com/jperedadnr/Game2048HOL#step-43-optional-tiles
 [I44]: https://github.com/jperedadnr/Game2048HOL#step-44-finding-mergeable-optionally-null-tiles
+[I45]: https://github.com/jperedadnr/Game2048HOL#step-45-traversing-the-grid-with-optional
