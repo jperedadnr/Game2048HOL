@@ -1428,15 +1428,22 @@ return Optional.ofNullable(gameGrid.get(loc));
 
 Back to [Index][I0]
 ***
-## STEP 44 
-In GameManager.mergeMovementsAvailable, use optionalTile to find pairs of mergeable tiles 
+## STEP 44. Finding mergeable (optionally null) tiles  
+Use `optionalTile` to find pairs of mergeable tiles when traversing the grid in two directions, 
+replacing the old code
+
 ### SOLUTION CODE 
-mergeMovementsAvailable (){
+* *Class*: `GameManager`
+* *Method*: `mergeMovementsAvailable`
+* [preview][44]
+* Copy and paste the following code snippet:
+```java
 optionalTile(thisloc).ifPresent(t1->{
-optionalTile(thisloc.offset(direction)).filter(t2->t1.isMergeable(t2))
-.ifPresent(t2->numMergeableTile.incrementAndGet());
+    optionalTile(thisloc.offset(direction)).filter(t2->t1.isMergeable(t2))
+            .ifPresent(t2->numMergeableTile.incrementAndGet());
 });
-}
+```
+
 Back to [Index][I0]
 ***
 ## STEP 45 
@@ -1555,6 +1562,7 @@ Back to [Index][I0]
 [41.4]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L438
 [42]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L55-60
 [43]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L523
+[44]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L501-504
 
 [screen5]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step5.jpg
 [screen9]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step9.jpg
