@@ -1447,8 +1447,8 @@ optionalTile(thisloc).ifPresent(t1->{
 
 Back to [Index][I0]
 ***
-## STEP 45 
-Use optionalTile to traverse the grid, with an `atomicInteger` to return the results 
+## STEP 45. Traversing the grid with Optional
+Use `optionalTile` to traverse the grid, with an `atomicInteger` to return the results 
 
 ### SOLUTION CODE 
 * *Class*: `GameManager`
