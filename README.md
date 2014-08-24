@@ -87,6 +87,7 @@ Now follow these steps
 ##### 39. [Setting options buttons][I39]
 ##### 40. [Setting up the Overlay][I40]
 ##### 41. [Listening to game won/over][I41]
+##### 41. [Listening to game won/over][I42]
 
 ***
 
@@ -1536,7 +1537,7 @@ Back to [Index][I0]
 [41.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L235
 [41.3]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L330
 [41.4]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L438
-[42]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L438
+[42]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L55-60
 
 [screen5]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step5.jpg
 [screen9]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step9.jpg
@@ -1589,3 +1590,4 @@ Back to [Index][I0]
 [I39]: https://github.com/jperedadnr/Game2048HOL#step-39-setting-options-buttons
 [I40]: https://github.com/jperedadnr/Game2048HOL#step-40-setting-up-the-overlay
 [I41]: https://github.com/jperedadnr/Game2048HOL#step-41-listening-to-game-wonover
+[I42]: https://github.com/jperedadnr/Game2048HOL#step-42-want-to-try-again
