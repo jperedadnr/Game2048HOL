@@ -87,7 +87,7 @@ Now follow these steps
 ##### 39. [Setting options buttons][I39]
 ##### 40. [Setting up the Overlay][I40]
 ##### 41. [Listening to game won/over][I41]
-##### 41. [Listening to game won/over][I42]
+##### 42. [Want to try again?][I42]
 
 ***
 
@@ -1399,8 +1399,17 @@ board.resetGameProperty().addListener((ov, b, b1) -> {
 });
 ```
 
-Screenshots after #42  
- 
+### Screenshots after #42
+Run the project to see the application after completing the first 42 steps. 
+Move the tiles randomly until you block the board, and the "Game Over!" message shows up. 
+Press "Try again" to start a new game
+
+![Game2048 after 42 steps][screen42.1]
+
+Try now to win the game
+
+![Game2048 after 42 steps][screen42.2]
+
 Back to [Index][I0]
 ***
 ## STEP 43 
@@ -1547,6 +1556,8 @@ Back to [Index][I0]
 [screen23]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step23.jpg
 [screen30]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step30.jpg
 [screen35]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step35.jpg
+[screen42.1]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step42-1.jpg
+[screen42.2]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step42-2.jpg
 
 [I0]: https://github.com/jperedadnr/Game2048HOL#index
 [I1]: https://github.com/jperedadnr/Game2048HOL#step-1-add-gamemanager-into-game2048
