@@ -92,6 +92,7 @@ Now follow these steps
 ##### 43. [Optional tiles][I43]
 ##### 44. [Finding mergeable (optionally null) tiles][I44]
 ##### 45. [Traversing the grid with Optional][I45]
+<!-- Not included -->
 
 ***
 
@@ -1492,7 +1493,26 @@ tilesWereMoved = GridOperator.traverseGrid((i, j) -> {
 
 Back to [Index][I0]
 ***
- 
+ ## STEP 46. Extra features  
+To find more extra features like:
+- Time of play
+- Session saving and restoring
+- Session pause
+- Quit
+- Best personal result
+- Resizable board
+- Any size of cells
+- Run on ARM devices
+- ...
+
+Go to this URL and fork this repo:
+
+```
+https://github.com/brunoborges/fx2048
+```
+
+Back to [Index][I0]
+***
 [1]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Game2048.java#L34-35
 [2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L50-51
 [3.1]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L77-98
