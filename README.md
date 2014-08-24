@@ -1508,7 +1508,7 @@ To find more extra features like:
 Go to this URL and fork this repo:
 
 ```
-https://github.com/brunoborges/fx2048
+[https://github.com/brunoborges/fx2048][46]
 ```
 
 Back to [Index][I0]
@@ -1645,3 +1645,4 @@ Back to [Index][I0]
 [I44]: https://github.com/jperedadnr/Game2048HOL#step-44-finding-mergeable-optionally-null-tiles
 [I45]: https://github.com/jperedadnr/Game2048HOL#step-45-traversing-the-grid-with-optional
 [I46]: https://github.com/jperedadnr/Game2048HOL#step-46-extra-features
+[46]: https://github.com/brunoborges/fx2048
