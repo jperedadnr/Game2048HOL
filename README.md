@@ -88,6 +88,8 @@ Now follow these steps
 ##### 40. [Setting up the Overlay][I40]
 ##### 41. [Listening to game won/over][I41]
 ##### 42. [Want to try again?][I42]
+<!-- Optional -->
+##### 43. [Optional tiles][I43]
 
 ***
 
@@ -1608,3 +1610,4 @@ Back to [Index][I0]
 [I40]: https://github.com/jperedadnr/Game2048HOL#step-40-setting-up-the-overlay
 [I41]: https://github.com/jperedadnr/Game2048HOL#step-41-listening-to-game-wonover
 [I42]: https://github.com/jperedadnr/Game2048HOL#step-42-want-to-try-again
+[I43]: https://github.com/jperedadnr/Game2048HOL#step-43-optional-tiles
