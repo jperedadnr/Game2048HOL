@@ -1412,13 +1412,18 @@ Try now to win the game
 
 Back to [Index][I0]
 ***
-## STEP 43 
-In GameManager.optionalTile, return an Optional of nullable from a given location on the map 
-gameGrid. 
+## STEP 43. Optional tiles 
+Return an `Optional` of nullable from a given location on the map `gameGrid`
+ 
 ### SOLUTION CODE 
-optionalTile(){
+* *Class*: `GameManager`
+* *Method*: `optionalTile`
+* [preview][43]
+* Copy and paste the following code snippet:
+```java
 return Optional.ofNullable(gameGrid.get(loc));
-}
+```
+
 Back to [Index][I0]
 ***
 ## STEP 44 
@@ -1547,6 +1552,7 @@ Back to [Index][I0]
 [41.3]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L330
 [41.4]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L438
 [42]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L55-60
+[43]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L523
 
 [screen5]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step5.jpg
 [screen9]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step9.jpg
