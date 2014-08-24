@@ -1507,9 +1507,8 @@ To find more extra features like:
 
 Go to this URL and fork this repo:
 
-```
 [https://github.com/brunoborges/fx2048][46]
-```
+
 
 Back to [Index][I0]
 ***
