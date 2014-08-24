@@ -1286,30 +1286,47 @@ bContinue.setOnAction(e->getChildren().removeAll(overlay, buttonsOverlay));
 Back to [Index][I0]
 ***
 ## STEP 40 
-In Board.initGameProperties, add listeners to game over, won properties. Set style to overlay, 
-set text and its style, add buttons, and add overlay to board. 
+Add listeners to game over and game won properties. 
+- For game over: 
+  - Set style to `"game-overlay"` and `"game-overlay-over"`
+  - Set `lOvrText` text to "Game Over!"
+  - Set `lOvrText` style to `"game-label"` and `"game-lblOver"`
+  - Add button `bTry`
+- For game won: 
+  - Set style to `"game-overlay"` and `"game-overlay-won"`
+  - Set `lOvrText` text to "You win!"
+  - Set `lOvrText` style to `"game-label"` and `"game-lblWon"`
+  - Add buttons `bContinue` and `bTry` 
+- In both cases:
+  - Add `overlay` and `buttonsOverlay` to board.
+
 ### SOLUTION CODE 
-initGameProperties(){
+* *Class*: `Board`
+* *Method*: `initGameProperties`
+* [preview][40]
+* Copy and paste the following code snippet:
+```java
 gameOverProperty.addListener((observable, oldValue, newValue) -> {
-if (newValue) {
-overlay.getStyleClass().setAll("game-overlay","game-overlay-
-over");
-lOvrText.setText("Game over!");
-lOvrText.getStyleClass().setAll("game-label","game-lblOver");
-buttonsOverlay.getChildren().setAll(bTry);
-this.getChildren().addAll(overlay,buttonsOverlay);
-}
+    if (newValue) {
+        overlay.getStyleClass().setAll("game-overlay","game-overlay-over");
+        lOvrText.setText("Game over!");
+        lOvrText.getStyleClass().setAll("game-label","game-lblOver");
+        buttonsOverlay.getChildren().setAll(bTry);
+        this.getChildren().addAll(overlay,buttonsOverlay);
+    }
 });
+
 gameWonProperty.addListener((observable, oldValue, newValue) -> {
-if (newValue) {
-overlay.getStyleClass().setAll("game-overlay","game-overlay-won");
-lOvrText.setText("You win!");
-lOvrText.getStyleClass().setAll("game-label","game-lblWon");
-buttonsOverlay.getChildren().setAll(bContinue, bTry);
-this.getChildren().addAll(overlay,buttonsOverlay);
-}
+    if (newValue) {
+        overlay.getStyleClass().setAll("game-overlay","game-overlay-won");
+        lOvrText.setText("You win!");
+        lOvrText.getStyleClass().setAll("game-label","game-lblWon");
+        buttonsOverlay.getChildren().setAll(bContinue, bTry);
+        this.getChildren().addAll(overlay,buttonsOverlay);
+    }
 });
-}
+```
+
 Back to [Index][I0]
 ***
 ## STEP 41 
@@ -1477,6 +1494,7 @@ Back to [Index][I0]
 [37.2]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L433-441
 [38]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/GameManager.java#L231-237
 [39]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L285-296
+[40]: https://github.com/jperedadnr/Game2048Solution/blob/master/src/org/hol/game2048/Board.java#L301-319
 
 [screen5]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step5.jpg
 [screen9]: https://raw.githubusercontent.com/jperedadnr/Game2048HOL/master/src/doc/screenshot-Step9.jpg
