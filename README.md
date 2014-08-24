@@ -39,7 +39,7 @@ https://github.com/jperedadnr/Game2048Empty.git
 Now follow these steps
 
 ### INDEX
-#### 1. Starting wiht the basis
+#### Starting wiht the basis
 ##### 1. [Add GameManager into Game2048][I1]
 ##### 2. [Add a Board into GameManager][I2]
 ##### 3. [Create a score to visualize points][I3]
@@ -49,9 +49,9 @@ Now follow these steps
 ##### 7. [Create a random Tile][I7]
 ##### 8. [Layout the tile at its location][I8]
 ##### 9. [Let's start the Game!][I9]
-#### 2. Styling
+#### Styling
 ##### 10. [CSS styling][I10]
-#### 3. Basic movements
+#### Basic movements
 ##### 11. [Connect arrow keys with Direction][I11]
 ##### 12. [Moving one tile][I12]
 ##### 13. [Moving tiles on the board][I13]
@@ -59,14 +59,14 @@ Now follow these steps
 ##### 15. [Initializing the game][I15]
 ##### 16. [Random tiles, random locations][I16]
 ##### 17. [How far can a tile go?][I17]
-#### 4. Animation
+#### Animation
 ##### 18. [A new approach to move the tiles][I18]
 ##### 19. [Animating one tile movement][I19]
 ##### 20. [Animating all the tiles together][I20]
 ##### 21. [Find a random available location][I21]
 ##### 22. [Adding and animating new tiles][I22]
 ##### 23. [Playing with new cells on the board][I23]
-#### 5. Java 8 Power
+#### Java 8 Power
 ##### 24. [Introducing the GridOperator][I24]
 ##### 25. [Traversing the grid properly][I25]
 ##### 26. [Sorting lists before moving tiles][I26]
@@ -75,7 +75,7 @@ Now follow these steps
 ##### 29. [Performing tiles merging on the move][I29]
 ##### 30. [Cleaning merged tiles][I30]
 ##### 31. [Fixing undesired effects][I31]
-#### 6. Score
+#### Score
 ##### 32. [Adding points][I32]
 ##### 33. [Counting points][I33]
 ##### 34. [Centering the points][I34]
@@ -83,16 +83,16 @@ Now follow these steps
 ##### 36. [Looking for pairs of mergeable tiles][I36]
 ##### 37. [Checking for Game Over][I37]
 ##### 38. [Checking for the winning tile][I38]
-#### 7. Overlay
+#### Overlay
 ##### 39. [Setting options buttons][I39]
 ##### 40. [Setting up the Overlay][I40]
 ##### 41. [Listening to game won/over][I41]
 ##### 42. [Want to try again?][I42]
-#### 8. Optional
+#### Optional
 ##### 43. [Optional tiles][I43]
 ##### 44. [Finding mergeable (optionally null) tiles][I44]
 ##### 45. [Traversing the grid with Optional][I45]
-#### 9. Not included
+#### Not included
 ##### 46. [Extra features][I46]
 ***
 
