@@ -39,7 +39,7 @@ https://github.com/jperedadnr/Game2048Empty.git
 Now follow these steps
 
 ### INDEX
-#### Starting wiht the basis
+#### Starting with the basis
 ##### 1. [Add GameManager into Game2048][I1]
 ##### 2. [Add a Board into GameManager][I2]
 ##### 3. [Create a score to visualize points][I3]
