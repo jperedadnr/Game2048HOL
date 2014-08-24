@@ -77,6 +77,7 @@ Now follow these steps
 ##### 36. [Looking for pairs of mergeable tiles][I36]
 ##### 37. [Checking for Game Over][I37]
 ##### 38. [Checking for the winning tile][I38]
+##### 39. [Setting options buttons][I39]
 
 ***
 
@@ -1518,3 +1519,4 @@ Back to [Index][I0]
 [I36]: https://github.com/jperedadnr/Game2048HOL#step-36-looking-for-pairs-of-mergeable-tiles
 [I37]: https://github.com/jperedadnr/Game2048HOL#step-37-checking-for-game-over
 [I38]: https://github.com/jperedadnr/Game2048HOL#step-38-checking-for-the-winning-tile
+[I39]: https://github.com/jperedadnr/Game2048HOL#step-39-setting-options-buttons
