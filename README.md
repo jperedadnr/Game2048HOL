@@ -535,7 +535,7 @@ Call `initializeGameGrid` before `startGame`
 * Copy and paste the following code snippet:
 ```java
 initializeGameGrid();
-gameGrid.clear()
+gameGrid.clear();
 ```
 
 Back to [Index][I0]
@@ -696,7 +696,7 @@ parallelTransition.setOnFinished(e -> {
 });
 ```
 
-Set `movingTiles` to true. start the animation and clear de list of animations.
+Set `movingTiles` to true. start the animation and clear the list of animations.
 
 #### SOLUTION CODE 
 * *Class*: `GameManager`
