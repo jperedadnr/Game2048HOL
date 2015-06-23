@@ -131,7 +131,7 @@ Create nodes for `hTop` in `createScore()`, with these steps:
 - Create a `VBox` named `vScores` and an `HBox`named `hScores` with spacing 5
 - Create a `Label` named `lblTit` with text `"SCORE"`, and add it to `vScore`, as well as `lblScore`
 - Create a `VBox` named `vRecord` and a `Label` named `lblTitBest` with text `"BEST"`, and add it to `vRecord`, as well as `lblBest`
-- Add `vScore` and `vRecord` to `hScores`, create a `VBox` named `vFill` with vertical grow priority to grow always, and add `hScores`and `vFill` to `vScores`
+- Add `vScore` and `vRecord` to `hScores`, create a `VBox` named `vFill` with vertical grow priority to grow always, and add `hScores` and `vFill` to `vScores`
 - Finally, add `lblTitle`, `lblSubtitle`, `hFill` and `vScores` to `hTop` 
  
 #### SOLUTION CODE 
